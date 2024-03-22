@@ -1,0 +1,78 @@
+@import "normalize-css.css";
+
+.footer {
+    background: #fff;
+    border-top: 1px solid #e5e5e5;
+    width: 100%;
+}
+
+.footer .container {
+    width: 1200px;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.footer .footer-store {
+    margin: 30px 0 0 0;
+    border-bottom: 1px solid #fff;
+}
+
+.footer .footer-store .title {
+    font-size: 16px;
+    font-family: "Semibold";
+    line-height: 20px;
+    color: #000;
+    margin-top: 0;
+}
+
+.footer .footer-store .bottom-nav {
+    margin: 10px 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.footer .footer-store .bottom-nav .bottom-nav-item {
+    line-height: 30px;
+}
+
+.footer .footer-store .bottom-nav .bottom-nav-item span {
+    font-size: 14px;
+    color: #444;
+}
+
+.footer .footer-store .box-support {
+    margin-top: 20px;
+}
+
+.footer .footer-store .box-support .method_bank {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 10px;
+}
+
+.footer .footer-store .box-support .facebook {
+    height: 38px;
+    width: 38px;
+    display: inline-block;
+}
+
+.footer .footer-store .box-support .youtube {
+    height: 38px;
+    width: 38px;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.footer .info-bottom {
+    margin: 10px 0 20px 0;
+    display: flex;
+    align-items: center;
+}
+
+.footer .copyright {
+    padding: 15px;
+    text-align: center;
+    line-height: 20px;
+    color: #444;
+    background-color: #eee;
+}

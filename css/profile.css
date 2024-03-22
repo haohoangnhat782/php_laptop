@@ -1,0 +1,162 @@
+@import "normalize-css.css";
+
+.body-container {
+    background-color: #f2f2f2;
+    margin-top      : 60px;
+}
+
+.body-container .container {
+    height          : 100%;
+    background-color: #fff;
+    padding         : 0 10px;
+    width           : 1200px;
+    margin          : 0 auto;
+}
+
+.grid-member {
+    padding: 30px 0;
+    display: flex;
+    gap    : 30px;
+}
+
+.profile-setting-container {
+    width     : 340px;
+    height    : 259px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.profile-setting-container .profile {
+    height          : 90px;
+    background-color: #F9920F;
+    display         : flex;
+    align-items     : center;
+    padding         : 20px;
+}
+
+.profile-setting-container .profile .profile-avatar-container img {
+    height       : 50px;
+    width        : 50px;
+    border-radius: 50%;
+    object-fit   : cover;
+    margin-right : 10px;
+}
+
+.profile-setting-container .profile .profile-label {
+    font-size: 16px;
+    color    : #fff;
+}
+
+.profile-setting-container .profile .profile-label .name {
+    font-weight: bold;
+}
+
+.profile-setting-container .profile-setting-menu {
+    list-style-type: none;
+    padding-left   : 0;
+}
+
+.selected {
+    background : #F8F8F8;
+    color      : #FF6700;
+    border-left: 3px solid #FF6700;
+}
+
+.profile-setting-container .profile-setting-menu .profile-setting-item .profile-setting-link {
+    text-decoration: none;
+    border-bottom  : 1px solid #EEEEEE;
+    padding        : 10px 12px;
+    display        : flex;
+    align-items    : center;
+    font-size      : 16px;
+    color          : #000;
+    line-height    : normal;
+    transition     : 0.1s ease-in-out;
+}
+
+.profile-setting-container .profile-setting-menu .profile-setting-item .profile-setting-link:hover {
+    background : #F8F8F8;
+    color      : #FF6700;
+    border-left: 3px solid #FF6700;
+}
+
+.profile-setting-container .profile-setting-menu .profile-setting-item .profile-setting-link .profile-setting-item-icon {
+    width    : 30px;
+    font-size: 18px;
+    color    : #6D6E70;
+}
+
+.profile-content-container {
+    flex-grow: 2;
+}
+
+.profile-content-container .profile-content {
+    border-radius: 5px;
+    border       : 1px solid #ccc;
+    padding      : 20px;
+}
+
+.profile-content-container .profile-content .profile-content-title {
+    padding-bottom: 8px;
+    margin-bottom : 20px;
+    color         : #444444;
+    text-transform: uppercase;
+    font-size     : 20px;
+    font-weight   : 700;
+    line-height   : normal;
+    border-bottom : 1px solid #ddd;
+    margin-top    : 0;
+}
+
+.profile-content-container .profile-content .box-user {
+    display      : flex;
+    margin-bottom: 20px;
+}
+
+.profile-content-container .profile-content .box-user label {
+    width        : 160px;
+    margin-bottom: 0;
+    font-size    : 16px;
+    color        : #444444;
+    padding-top  : 8px;
+    font-weight  : normal;
+}
+
+.profile-content-container .profile-content .box-user input {
+    width        : 390px;
+    height       : 40px;
+    background   : #fff;
+    padding      : 5px 20px;
+    font-size    : 16px;
+    outline      : none;
+    border       : 1px solid #DDDDDD;
+    box-shadow   : 1px 1px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.profile-content-container .profile-content .box-user.box-submit {
+    margin-left: 160px;
+}
+
+.profile-content-container .profile-content .box-user .profile-update-btn {
+    border-radius  : 3px;
+    background     : #FF6700;
+    line-height    : normal;
+    font-weight    : 700;
+    font-size      : 16px;
+    color          : #fff;
+    text-transform : uppercase;
+    padding        : 5px 20px;
+    display        : inline-flex;
+    height         : 40px;
+    align-items    : center;
+    justify-content: center;
+    width          : 390px;
+    transition     : 0.1s ease-in-out;
+    outline        : none;
+    border         : none;
+}
+
+.profile-content-container .profile-content .box-user .profile-update-btn:hover {
+    color     : #fff;
+    background: #F9920F;
+}
