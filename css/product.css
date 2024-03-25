@@ -1,0 +1,93 @@
+.body-container {
+  margin-top: 60px;
+  background-color: #f2f2f2;
+}
+
+.body-container .container {
+  background: #fff;
+  padding: 52px 10px 52px 10px;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.body-container .container img {
+  width: auto;
+  height: 400px;
+}
+
+.body-container .container .carousel-control-prev,
+.body-container .container .carousel-control-next {
+  background: black;
+  height: 50px;
+  width: 50px;
+  top: 44%;
+}
+
+.five-stars,
+.one-star {
+  position: relative;
+}
+.five-stars {
+  display: flex;
+}
+.full-star-img,
+.empty-star {
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 14px;
+  width: 14px;
+}
+.full-star {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+.price-default {
+  text-decoration: line-through;
+  text-decoration-color: rgb(110, 108, 108);
+}
+.voucher {
+  background: #ee4d2d;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  margin-left: 15px;
+  padding: 2px 4px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.btn-group .btn-outline-secondary {
+  border-color: #ced4da;
+}
+
+.cart-icon {
+  width: 30px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.btn-tinted, .btn-buy {
+  width: 250px;
+  height: 50px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.btn-tinted {
+  background-color: #ffeee8;
+  border: 1px solid #ee4d2d;
+  color: #ee4d2d;
+}
+
+.btn-buy {
+  background-color: #ee4d2d;
+  color: #fff;
+  border: none;
+}
