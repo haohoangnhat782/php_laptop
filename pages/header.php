@@ -47,9 +47,11 @@
                             <br>
                             <span>Gần bạn</span>
                         </div>
-                        <div class="cart">
-                            <span class="nbc">0</span>
-                        </div>
+                        <a href="index.php?quanly=cart">
+                            <div class="cart">
+                                <span class="nbc">0</span>
+                            </div>
+                        </a>
                         <div class="member-btn" title="Thành viên - Đăng ký - Đăng nhập"><a href="index.php?quanly=profile">
                           
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
