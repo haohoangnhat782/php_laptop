@@ -8,32 +8,32 @@ Array.from(topTitle).forEach((topTitleItem) => {
   });
 });
 
-// $(document).ready(function () {
-//   window.scrollTo(0, 30);
-//   bodyContainer.ready(function () {
-//     $.ajax({
-//       url: "login.php",
-//       success: function (response) {
-//         $(".form-container").html(response);
-//       },
-//     });
-//   });
+$(document).ready(function () {
+  window.scrollTo(0, 30);
+  bodyContainer.ready(function () {
+    $.ajax({
+      url: "pages/main/Authenticate/login.php",
+      success: function (response) {
+        $(".form-container").html(response);
+      },
+    });
+  });
 
-//   $(".login").click(function () {
-//     $.ajax({
-//       url: "login.php",
-//       success: function (response) {
-//         $(".form-container").html(response);
-//       },
-//     });
-//   });
+  $(".login").click(function () {
+    $.ajax({
+      url: "pages/main/Authenticate/login.php",
+      success: function (response) {
+        $(".form-container").html(response);
+      },
+    });
+  });
 
-//   $(".register").click(function () {
-//     $.ajax({
-//       url: "register.php",
-//       success: function (response) {
-//         $(".form-container").html(response);
-//       },
-//     });
-//   });
-// });
+  $(".register").click(function () {
+    $.ajax({
+      url: "pages/main/Authenticate/register.php",
+      success: function (response) {
+        $(".form-container").html(response);
+      },
+    });
+  });
+});

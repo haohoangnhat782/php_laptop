@@ -11,12 +11,12 @@ Array.from(profileSettingItems).forEach((profileSettingItem) => {
 $(document).ready(function (event) {
   bodyContainer.ready(function () {
     $.ajax({
-      url: "../pages/Profile/UpdateProfileInfo/updateProfile.php",
+      url: "pages/main/Profile/UpdateProfileInfo/updateProfile.php",
       success: function (response) {
         $(".profile-content-container").html(response);
       },
       data: {
-        isUserInfo: true
+        isUserInfo: true,
       },
     });
   });
@@ -25,7 +25,7 @@ $(document).ready(function (event) {
   Array.from(updateProfile).forEach((updateProfileItem) => {
     updateProfileItem.addEventListener("click", () => {
       $.ajax({
-        url: "../pages/Profile/UpdateProfileInfo/updateProfile.php",
+        url: "pages/main/Profile/UpdateProfileInfo/updateProfile.php",
         success: function (response) {
           $(".profile-content-container").html(response);
         },
@@ -40,7 +40,7 @@ $(document).ready(function (event) {
 
   $(".orderManagement").click(function () {
     $.ajax({
-      url: "../pages/Profile/UpdateProfileInfo/orderManagement.php",
+      url: "pages/main/Profile/UpdateProfileInfo/orderManagement.php",
       success: function (response) {
         $(".profile-content-container").html(response);
       },

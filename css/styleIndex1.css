@@ -674,6 +674,9 @@ p.ram-item-index {
 .product-filter-content-product-item-text p,li{
     margin-bottom: 6px;
 }
+.product-filter-content-product-item-text li{
+    list-style: none;
+}
 .information-container{
     background-color: #F8f9FA;
     margin: 2px 2px;

@@ -1,5 +1,3 @@
-
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +6,8 @@
     <link rel='stylesheet' type='text/css' href='css/authenticate.css' />
     <script src="https://kit.fontawesome.com/e634a8a20d.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- <script defer src="js/authenticate.js"></script> -->
-    
+    <script defer src="js/authenticate.js"></script>
+
 </head>
 
 <body>
@@ -45,33 +43,34 @@
                             </div>
                             <div class="grid-item">
                                 <div class="top-title">
-                                 <span title="Đăng nhập" class="login"> <a href="index.php?quanly=authenticate&hd=dn">  Đăng nhập</a></span>
-                                <span title="Đăng ký" class="register">    <a href="index.php?quanly=authenticate&hd=dk"> Đăng ký </a></span>
+                                    <span title="Đăng nhập" class="login active"> <!-- <a href="index.php?quanly=authenticate&hd=dn"> Đăng nhập</a> -->
+                                        Đăng nhập
+                                    </span>
+                                    <span title="Đăng ký" class="register"> <!-- <a href="index.php?quanly=authenticate&hd=dk"> Đăng ký </a> -->
+                                        Đăng ký
+                                    </span>
                                 </div>
                                 <div class="form-container">
-                                <?php
-    if(isset($_GET['quanly']) && isset($_GET['hd']) ){
-        $tam=$_GET['quanly'];
-        $hd=$_GET['hd'];
-    }
-    else{
-        $tam='';
-        $hd='';
-    }
-    
+                                    <?php
+                                    if (isset($_GET['quanly']) && isset($_GET['hd'])) {
+                                        $tam = $_GET['quanly'];
+                                        $hd = $_GET['hd'];
+                                    } else {
+                                        $tam = '';
+                                        $hd = '';
+                                    }
 
-    if($tam=='authenticate'& $hd=='dn'){
-        include('pages/main/Authenticate/login.php');
-    }
-    elseif ($tam=='authenticate'& $hd=='dk'){
-        include('pages/main/Authenticate/register.php');
-    } 
-    else{
-        include('pages//main/Authenticate/login.php');
-    }
-  
 
-?>
+                                    if ($tam == 'authenticate' & $hd == 'dn') {
+                                        include('pages/main/Authenticate/login.php');
+                                    } elseif ($tam == 'authenticate' & $hd == 'dk') {
+                                        include('pages/main/Authenticate/register.php');
+                                    } else {
+                                        include('pages//main/Authenticate/login.php');
+                                    }
+
+
+                                    ?>
                                 </div>
                                 <div class="wrapper">
                                     <span></span>
@@ -99,5 +98,5 @@
                 </div>
             </div>
         </div>
-    </div>  
+    </div>
 </body>
