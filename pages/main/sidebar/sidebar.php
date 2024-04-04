@@ -1,42 +1,23 @@
-       
+<?php 
+
+$sql_dm = "SELECT * FROM danh_muc";
+$query_dm=mysqli_query($mysqli,$sql_dm);
+
+	 ?>
+
                       <div class="filter-product-brand">
                           <p>Danh mục</p>
                           <div class="filter-product-content">
                               <div class="fitler-product-content-item">
-                               
+                               		
+		<?php  while ($row=mysqli_fetch_array($query_dm)) { ?>
                                     <div class="item-brand-filter">
                                       <input type="checkbox"  name="hp" >
-                                      <label for="hp"> HP</label><br>
+                                      <label for="hp"><a href="index.php?quanly=danhmucsanpham&id=<?php echo $row['id'] ?>"><p style="font-color=black"> <?php echo $row['ten_danh_muc'] ?></p></a></label><br>
                                     </div>
-                                    <div class="item-brand-filter">
-                                      <input type="checkbox"  name="hp" >
-                                      <label for="hp"> HP</label><br>
-                                    </div>
-                                    <div class="item-brand-filter">
-                                      <input type="checkbox"  name="hp" >
-                                      <label for="hp"> HP</label><br>
-                                    </div>
-                                    <div class="item-brand-filter">
-                                      <input type="checkbox"  name="hp" >
-                                      <label for="hp"> HP</label><br>
-                                    </div>
-                                  
-                                    <div class="item-brand-filter">
-                                      <input type="checkbox"  name="macbook" >
-                                      <label for="hp"> Macbook</label><br>
-                                    </div>
-                                    <div class="item-brand-filter">
-                                      <input type="checkbox"  name="hp" >
-                                      <label for="hp"> Dell</label><br>
-                                    </div>
-                                    <div class="item-brand-filter">
-                                      <input type="checkbox"  name="hp" >
-                                      <label for="hp"> HP</label><br>
-                                    </div>
-                                    <div class="item-brand-filter">
-                                      <input type="checkbox"  name="hp" >
-                                      <label for="hp"> HP</label><br>
-                                    </div>
+                         
+                                    <?php } ?>
+
                                   
 
                                   
@@ -45,7 +26,7 @@
                               </div>
                           </div>
                           
-                      <div class="filter-product-brand">
+                      <!-- <div class="filter-product-brand">
                         <p>Ram</p>
                         <div class="filter-product-content">
                             <div class="fitler-product-content-item">
@@ -115,7 +96,7 @@
                                 </div>
       
                               </div>
-                          </div>
+                          </div> -->
                           <div class="filter-product-Onerow">
                             <p>Mức giá</p>
                             <div class="filter-product-content-Onerow">

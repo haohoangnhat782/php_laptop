@@ -8,6 +8,8 @@
     <title>Shop-LapTop</title>
 </head>
 <body>
+    <?php include("config/config.php");
+ ?>
 <?php  include('pages/header.php');?>
 <?php  include('pages/menu.php');?>
 <?php  include('pages/main.php');?>
