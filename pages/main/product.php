@@ -6,21 +6,29 @@
 </head>
 
 <body>
+
+<?php  
+$sql_chitiet="SELECT * FROM san_pham,danh_muc WHERE san_pham.ma_danh_muc=danh_muc.id and san_pham.id ='$_GET[id]' LIMIT 1";
+$query_chitiet=mysqli_query($mysqli,$sql_chitiet);
+
+?>
     <div class="body-container">
         <div class="container">
             <main id="main-container">
+
                 <div class="grid-members row">
+                    <?php while($row=mysqli_fetch_array($query_chitiet)){ ?>
                     <div class="grid-item col-md-5">
                         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="../../images/visa.svg" class="d-block w-100" alt="Image 1">
+                                    <img src="images/<?php echo $row['hinh_anh']?>" class="d-block w-100" alt="Image 1">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="../../images/fb.svg" class="d-block w-100" alt="Image 2">
+                                    <img src="images/<?php echo $row['hinh_anh']?>" class="d-block w-100" alt="Image 2">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="../../images/ytb.svg" class="d-block w-100" alt="Image 3">
+                                    <img src="images/<?php echo $row['hinh_anh']?>" class="d-block w-100" alt="Image 3">
                                 </div>
                             </div>
                             <div class="carousel-control">
@@ -38,10 +46,10 @@
                     <div class="grid-item col-md-7">
                         <div class="d-flex flex-column flex-auto">
                             <div class="product-name text-break fs-4 fw-medium">
-                                <span>Laptop Acer Aspire 3 A314 35 C3KS N5100/4GB/256GB/Win11 (NX.A7SSV.009)</span>
+                                <span><?php echo $row['ten_san_pham']?></span>
                             </div>
                             <div class="d-flex mt-2">
-                                <button class="d-flex bg-transparent border-0 px-4">
+                                <!-- <button class="d-flex bg-transparent border-0 px-4">
                                     <div class="text-danger fw-medium border-bottom border-danger">
                                         4.9
                                     </div>
@@ -99,8 +107,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                </button>
-                                <button class="d-flex bg-transparent border-0 px-4">
+                                </button> -->
+                                <!-- <button class="d-flex bg-transparent border-0 px-4">
                                     <div class="fw-medium border-bottom border-secondary" style="font-size: 1rem">
                                         25k
                                     </div>
@@ -116,18 +124,19 @@
                                     <div class="ms-1 text-body-secondary">
                                         Đã Bán
                                     </div>
-                                </button>
+                                </button> -->
                             </div>
                             <div class="mt-2 bg-body-tertiary">
                                 <div class="d-flex align-items-center">
                                     <div class="price-default fw-bold text-body-tertiary px-3" style="font-size: 1rem">
-                                        220.000
+                                  
+                                    <?php echo $row['don_gia'] + $row['don_gia'] * 10 / 100 ?>
                                     </div>
                                     <div class="d-flex align-items-center">
                                         <div class="price-details fw-bold text-danger" style="font-size: 1.875rem">
-                                            110.000
+                                        <?php echo $row['don_gia']?>
                                         </div>
-                                        <div class="voucher">50% GIẢM</div>
+                                        <div class="voucher">10% GIẢM</div>
                                     </div>
                                 </div>
                             </div>
@@ -139,8 +148,18 @@
                                         <input type="text" class="form-control border-light-subtle text-center quantity-input" aria-valuenow="1" value="1" style="max-width: 50px;">
                                         <button type="button" class="btn btn-outline-secondary increase" aria-label="Increase">+</button>
                                     </div>
-                                    <div class="ms-2">210 sản phẩm có sẵn</div>
+                                    <div class="ms-2"><?php echo $row['so_luong']?> sản phẩm có sẵn</div>
                                 </div>
+                            </div>
+                            <div class="information">
+                                <p>Danh muc: <?php echo $row['ten_danh_muc']?></p>
+                                <p>Dung lượng pin: <?php echo $row['dung_luong_pin']?></p>
+                                <p>Màn hình: <?php echo $row['man_hinh']?></p>
+                                <p>CPU: <?php echo $row['cpu']?></p>
+                                <p>Ram: <?php echo $row['ram']?></p>
+                                <p>Thông tin chung: <?php echo $row['thong_tin_chung']?></p>
+                                <p>Bảo hành: <?php echo $row['bao_hanh']?></p>
+
                             </div>
                             <div class="mt-5 d-flex">
                                 <div class="d-flex align-items-center">
@@ -157,6 +176,7 @@
                             </div>
                         </div>
                     </div>
+                    <?php } ?>
                 </div>
             </main>
         </div>

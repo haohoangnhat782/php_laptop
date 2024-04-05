@@ -29,9 +29,9 @@
                             Danh mục
                         </button>
                         <div class="search-container">
-                            <form>
-                                <input type="text" placeholder="Tìm kiếm sản phẩm" name="search" class="search-input">
-                                <button type="submit" class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+                            <form action="index.php?quanly=timkiem" method="POST">
+                                <input type="text" placeholder="Tìm kiếm sản phẩm" name="tukhoa" class="search-input">
+                                <button type="submit" class="search-btn" name="timkiem"><i class="fa fa-search" aria-hidden="true"></i></button>
                             </form>
                         </div>
                     </div>

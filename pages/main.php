@@ -25,8 +25,8 @@
 
     if ($tam == 'trangchu') {
         include('pages/main/index.php');
-    } elseif ($tam == 'sanpham') {
-        include('pages/main/filter_product.php');
+    } elseif ($tam == 'sanphamall') {
+        include('main/filter_product.php');
     } elseif ($tam == 'chitiet') {
         include('pages/main/product.php');  
     } elseif ($tam == 'cart') {
@@ -36,9 +36,12 @@
     } elseif ($tam == 'profile') {
         include('pages/main/Profile/profile.php');
     }
-    if($tam=='danhmucsanpham'){
+    elseif($tam=='danhmucsanpham'){
         include("main/danhmuc.php");
-    } else {
+    }  elseif($tam=='timkiem'){
+        include("main/timkiem.php");
+    } 
+    else {
         include('pages/main/index.php');
     }
 

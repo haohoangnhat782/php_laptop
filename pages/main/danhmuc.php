@@ -76,7 +76,7 @@ $(document).ready(function() {
 
   
     $.ajax({
-        url: 'pages/main/phantrangtheodm.php',
+        url: 'pages/main/phantrang/phantrangtheodm.php',
         type: 'GET',
         data: {
             id: '<?php echo $_GET['id']; ?>', 
@@ -112,7 +112,7 @@ $(document).ready(function() {
         }
         
         $.ajax({
-            url: 'pages/main/phantrangtheodm.php',
+            url: 'pages/main/phantrang/phantrangtheodm.php',
             type: 'GET',
             data: {
                 id: '<?php echo $_GET['id']; ?>', 

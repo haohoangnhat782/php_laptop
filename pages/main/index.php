@@ -1,5 +1,9 @@
-
-    
+<?php
+$sql_sp="SELECT * FROM san_pham,danh_muc where san_pham.ma_danh_muc=danh_muc.id order by san_pham.id DESC limit 4";
+$query_sp=mysqli_query($mysqli,$sql_sp);
+$sql_sp_noi_bat="SELECT * FROM san_pham,danh_muc where san_pham.ma_danh_muc=danh_muc.id order by san_pham.id DESC limit 8";
+$query_sp_noi_bat=mysqli_query($mysqli,$sql_sp_noi_bat);
+?> 
 <div class="body">
 <!----------------------Slider-----------------     -->
 <div class="slider ">
@@ -7,8 +11,6 @@
     <div class="slider-content">
       <div class="slider-content-left">
         <div class="slider-content-left-top-container">
-
-        
        <div class="slider-content-left-top">
         <a href=""><img src="images/slider1.jpg" alt=""></a>
         <a href=""><img src="images/slider2.jpg" alt=""></a>
@@ -40,96 +42,52 @@
 </div>
 <div class="clear"></div>
 
-<secton class="slider-product-one">
+<section class="product-gallery-one">
   <div class="container-product">
-    <div class="slider-product-one-content">
-      <div class="slider-product-one-content-title">
-        <h2>KHUYẾN MÃI HOT</h2>
-      </div>
-      <div class="slider-product-one-content-items body">
-        <div class="slider-product-one-content-item">
-          <a href="">
-          <img src="images/gaminh.jpg" alt="">
-          <div class="slider-product-one-content-item-text">
-          <li>
-                                        <p class="title-item">Laptop Gigabyte Gaming G5</p>
-                                        <p class="brand-item">Danh mục:Gaming</p>
-                                                                         
-                                        <div class="prices">
-                                          <p class="price">20.490.000 <sup>đ</sup></p>   
-                                          <p class="discount-item"><a href="">21.490.000 <sup>đ</sup></a></p>
-                                         </div>
-                                 
-                                        
-                                      </li>
-          </div>
-        </a>
-
-        </div>
-        <div class="slider-product-one-content-item">
-          <a href="">
-          <img src="images/gaminh.jpg" alt="">
-          <div class="slider-product-one-content-item-text">
-        
-          <li>
-                                        <p class="title-item">Laptop Gigabyte Gaming G5</p>
-                                        <p class="brand-item">Danh mục:Gaming</p>
-                                                                         
-                                        <div class="prices">
-                                          <p class="price">20.490.000 <sup>đ</sup></p>   
-                                          <p class="discount-item"><a href="">21.490.000 <sup>đ</sup></a></p>
-                                         </div>
-                                 
-                                        
-                                      </li>
-          </div>
-        </a>
-
-        </div>
-        <div class="slider-product-one-content-item">
-          <a href="">
-          <img src="images/gaminh.jpg" alt="">
-          <div class="slider-product-one-content-item-text">
-          <li>
-                                        <p class="title-item">Laptop Gigabyte Gaming G5</p>
-                                        <p class="brand-item">Danh mục:Gaming</p>
-                                                                         
-                                        <div class="prices">
-                                          <p class="price">20.490.000 <sup>đ</sup></p>   
-                                          <p class="discount-item"><a href="">21.490.000 <sup>đ</sup></a></p>
-                                         </div>
-                                 
-                                        
-                                      </li>
-          </div>
-        </a>
-
-        </div>
-        <div class="slider-product-one-content-item">
-          <a href="">
-          <img src="images/gaminh.jpg" alt="">
-          <div class="slider-product-one-content-item-text">
-          <li>
-                                        <p class="title-item">Laptop Gigabyte Gaming G5</p>
-                                        <p class="brand-item">Danh mục:Gaming</p>
-                                                                         
-                                        <div class="prices">
-                                          <p class="price">20.490.000 <sup>đ</sup></p>   
-                                          <p class="discount-item"><a href="">21.490.000 <sup>đ</sup></a></p>
-                                         </div>
-                                 
-                                        
-                                      </li>
-          </div>
-        </a>
-
-        </div>
-        
+    <div class="product-gallery-one-content">
+      <div class="product-gallery-one-content-title">
+        <p>LAPTOP MỚI</p>
+         <a href="index.php?quanly=sanphamall"><p></p></a>
+      
 
       </div>
+      <div class="product-gallery-one-content-product body">
+      <?php  
+          while($row=mysqli_fetch_array($query_sp)){
+        ?>
+       <div class="product-gallery-one-content-product-item">
+                        <a href="index.php?quanly=chitiet&id=<?php echo $row['id'] ?>">
+                            <img src="images/<?php echo $row['hinh_anh']?>" alt="">
+                            <div class="product-gallery-one-content-product-item-text">
+                                <li>
+                                    <p class="title-item-index"><?php echo $row['ten_san_pham']?></p>
+                                    <div class="prices-index">
+                                        <p class="price-index">Giá: <?php echo $row['don_gia'] ?>  <sup>đ</sup></p>
+                                    </div>
+                                    <div class="information-container-index">
+                                    <p class="brand-item-index">Danh mục:<?php echo $row['ten_danh_muc'] ?></p>
+                                        <div class="information-item-index">
+                                        
+                                            <p class="cpu-item-index">CPU: <?php echo $row['cpu'] ?> </p>
+                                        </div>
+                                        <p class="ram-item-index">RAM: <?php echo $row['ram'] ?></p>
+                                    </div>
+                                </li>
+                            </div>
+                        </a>
+                    </div>
+        <?php } ?>
+      
+      
+
+      
+      </div>
+      <div class="clear"></div>
     </div>
+
   </div>
-</secton>
+  <div class="clear"></div>
+</section>
 
 
 <!-- -------------/product-gallery ------------>
@@ -138,211 +96,36 @@
     <div class="product-gallery-one-content">
       <div class="product-gallery-one-content-title">
         <p>LAPTOP NỔI BẬT NHẤT</p>
-         <a href=""><p>Xem tất cả</p></a>
+         <a href="index.php?quanly=sanphamall"><p>Xem tất cả</p></a>
       
 
       </div>
       <div class="product-gallery-one-content-product body">
-        <div class="product-gallery-one-content-product-item">
-          <a href="">
-            <img src="images/gaminh.jpg" alt="">
-            <div class="product-gallery-one-content-product-item-text" >
-            <li>
-                                        <p class="title-item-index">Laptop Gigabyte Gaming G5</p>
-                                                                         
-                                        <div class="prices-index">
-                                        
-                                          <p class="price-index">20.490.000 <sup>đ</sup></p>   
-                                          <p class="discount-item-index"><a href="">21.490.000 <sup>đ</sup></a></p>
-                                         </div>
-                                        <div class="information-container-index">
-                                         <div class="information-item-index">
-                                          <p class="brand-item-index">Danh mục:Gaming</p>
-                                          <p class="cpu-item-index"> Core i5</p>                                      
-                                         </div>
-                                         <p class="ram-item-index">8 GB, LPDDR3, 1600 Mhz</p>
+      <?php  
+          while($row=mysqli_fetch_array($query_sp_noi_bat)){
+        ?>
+       <div class="product-gallery-one-content-product-item">
+                        <a href="index.php?quanly=chitiet&id=<?php echo $row['id'] ?>">
+                            <img src="images/<?php echo $row['hinh_anh']?>" alt="">
+                            <div class="product-gallery-one-content-product-item-text">
+                                <li>
+                                    <p class="title-item-index"><?php echo $row['ten_san_pham']?></p>
+                                    <div class="prices-index">
+                                        <p class="price-index">Giá: <?php echo $row['don_gia'] ?>  <sup>đ</sup></p>
+                                    </div>
+                                    <div class="information-container-index">
+                                    <p class="brand-item-index">Danh mục:<?php echo $row['ten_danh_muc'] ?></p>
+                                        <div class="information-item-index">
+                                       
+                                            <p class="cpu-item-index">CPU: <?php echo $row['cpu'] ?> </p>
                                         </div>
-                                        
-                                      </li>
-            </div>
-          </a>
-  
-        </div>
-        <div class="product-gallery-one-content-product-item">
-          <a href="">
-            <img src="images/gaminh.jpg" alt="">
-            <div class="product-gallery-one-content-product-item-text" >
-            <li>
-                                        <p class="title-item-index">Laptop Gigabyte Gaming G5</p>
-                                                                         
-                                        <div class="prices-index">
-                                        
-                                          <p class="price-index">20.490.000 <sup>đ</sup></p>   
-                                          <p class="discount-item-index"><a href="">21.490.000 <sup>đ</sup></a></p>
-                                         </div>
-                                        <div class="information-container-index">
-                                         <div class="information-item-index">
-                                          <p class="brand-item-index">Danh mục:Gaming</p>
-                                          <p class="cpu-item-index"> Core i5</p>                                      
-                                         </div>
-                                         <p class="ram-item-index">8 GB, LPDDR3, 1600 Mhz</p>
-                                        </div>
-                                        
-                                      </li>
-            </div>
-          </a>
-  
-        </div>
-        <div class="product-gallery-one-content-product-item">
-          <a href="">
-            <img src="images/gaminh.jpg" alt="">
-            <div class="product-gallery-one-content-product-item-text" >
-            <li>
-                                        <p class="title-item-index">Laptop Gigabyte Gaming G5</p>
-                                                                         
-                                        <div class="prices-index">
-                                        
-                                          <p class="price-index">20.490.000 <sup>đ</sup></p>   
-                                          <p class="discount-item-index"><a href="">21.490.000 <sup>đ</sup></a></p>
-                                         </div>
-                                        <div class="information-container-index">
-                                         <div class="information-item-index">
-                                          <p class="brand-item-index">Danh mục:Gaming</p>
-                                          <p class="cpu-item-index"> Core i5</p>                                      
-                                         </div>
-                                         <p class="ram-item-index">8 GB, LPDDR3, 1600 Mhz</p>
-                                        </div>
-                                        
-                                      </li>
-            </div>
-          </a>
-  
-        </div>
-        <div class="product-gallery-one-content-product-item">
-          <a href="">
-            <img src="images/gaminh.jpg" alt="">
-            <div class="product-gallery-one-content-product-item-text" >
-            <li>
-                                        <p class="title-item-index">Laptop Gigabyte Gaming G5</p>
-                                                                         
-                                        <div class="prices-index">
-                                        
-                                          <p class="price-index">20.490.000 <sup>đ</sup></p>   
-                                          <p class="discount-item-index"><a href="">21.490.000 <sup>đ</sup></a></p>
-                                         </div>
-                                        <div class="information-container-index">
-                                         <div class="information-item-index">
-                                          <p class="brand-item-index">Danh mục:Gaming</p>
-                                          <p class="cpu-item-index"> Core i5</p>                                      
-                                         </div>
-                                         <p class="ram-item-index">8 GB, LPDDR3, 1600 Mhz</p>
-                                        </div>
-                                        
-                                      </li>
-            </div>
-          </a>
-  
-        </div>
-        <div class="product-gallery-one-content-product-item">
-          <a href="">
-            <img src="images/gaminh.jpg" alt="">
-            <div class="product-gallery-one-content-product-item-text" >
-            <li>
-                                        <p class="title-item-index">Laptop Gigabyte Gaming G5</p>
-                                                                         
-                                        <div class="prices-index">
-                                        
-                                          <p class="price-index">20.490.000 <sup>đ</sup></p>   
-                                          <p class="discount-item-index"><a href="">21.490.000 <sup>đ</sup></a></p>
-                                         </div>
-                                        <div class="information-container-index">
-                                         <div class="information-item-index">
-                                          <p class="brand-item-index">Danh mục:Gaming</p>
-                                          <p class="cpu-item-index"> Core i5</p>                                      
-                                         </div>
-                                         <p class="ram-item-index">8 GB, LPDDR3, 1600 Mhz</p>
-                                        </div>
-                                        
-                                      </li>
-            </div>
-          </a>
-  
-        </div>
-        <div class="product-gallery-one-content-product-item">
-          <a href="">
-            <img src="images/gaminh.jpg" alt="">
-            <div class="product-gallery-one-content-product-item-text" >
-            <li>
-                                        <p class="title-item-index">Laptop Gigabyte Gaming G5</p>
-                                                                         
-                                        <div class="prices-index">
-                                        
-                                          <p class="price-index">20.490.000 <sup>đ</sup></p>   
-                                          <p class="discount-item-index"><a href="">21.490.000 <sup>đ</sup></a></p>
-                                         </div>
-                                        <div class="information-container-index">
-                                         <div class="information-item-index">
-                                          <p class="brand-item-index">Danh mục:Gaming</p>
-                                          <p class="cpu-item-index"> Core i5</p>                                      
-                                         </div>
-                                         <p class="ram-item-index">8 GB, LPDDR3, 1600 Mhz</p>
-                                        </div>
-                                        
-                                      </li>
-            </div>
-          </a>
-  
-        </div>
-        <div class="product-gallery-one-content-product-item">
-          <a href="">
-            <img src="images/gaminh.jpg" alt="">
-            <div class="product-gallery-one-content-product-item-text" >
-            <li>
-                                        <p class="title-item-index">Laptop Gigabyte Gaming G5</p>
-                                                                         
-                                        <div class="prices-index">
-                                        
-                                          <p class="price-index">20.490.000 <sup>đ</sup></p>   
-                                          <p class="discount-item-index"><a href="">21.490.000 <sup>đ</sup></a></p>
-                                         </div>
-                                        <div class="information-container-index">
-                                         <div class="information-item-index">
-                                          <p class="brand-item-index">Danh mục:Gaming</p>
-                                          <p class="cpu-item-index"> Core i5</p>                                      
-                                         </div>
-                                         <p class="ram-item-index">8 GB, LPDDR3, 1600 Mhz</p>
-                                        </div>
-                                        
-                                      </li>
-            </div>
-          </a>
-  
-        </div>
-        <div class="product-gallery-one-content-product-item">
-          <a href="">
-            <img src="images/gaminh.jpg" alt="">
-            <div class="product-gallery-one-content-product-item-text" >
-            <li>
-                                        <p class="title-item-index">Laptop Gigabyte Gaming G5</p>
-                                                                         
-                                        <div class="prices-index">
-                                        
-                                          <p class="price-index">20.490.000 <sup>đ</sup></p>   
-                                          <p class="discount-item-index"><a href="">21.490.000 <sup>đ</sup></a></p>
-                                         </div>
-                                        <div class="information-container-index">
-                                         <div class="information-item-index">
-                                          <p class="brand-item-index">Danh mục:Gaming</p>
-                                          <p class="cpu-item-index"> Core i5</p>                                      
-                                         </div>
-                                         <p class="ram-item-index">8 GB, LPDDR3, 1600 Mhz</p>
-                                        </div>
-                                        
-                                      </li>
-            </div>
-          </a>
-  
-        </div>
+                                        <p class="ram-item-index">RAM: <?php echo $row['ram'] ?></p>
+                                    </div>
+                                </li>
+                            </div>
+                        </a>
+                    </div>
+        <?php } ?>
       
       
 

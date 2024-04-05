@@ -1,5 +1,5 @@
 <?php 
-include("../../config/config.php"); ?>
+include("../../../config/config.php"); ?>
 <?php
 
 $page = isset($_GET['page']) ? $_GET['page'] : 1;
@@ -18,7 +18,7 @@ $query_sp = mysqli_query($mysqli, $sql_pro);
 
                                 ?>
                                     <div class="product-filter-content-product-item">
-                                        <a href="index.php?quanly=sanpham&id=<?php echo $row['id'] ?>">
+                                        <a href="index.php?quanly=chitiet&id=<?php echo $row['id'] ?>">
                                             <img src="images/<?php echo $row['hinh_anh'] ?>" alt="">
                                             <div class="product-filter-content-product-item-text">
                                                 <li>
