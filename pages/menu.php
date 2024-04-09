@@ -22,7 +22,7 @@ $query_dm=mysqli_query($mysqli,$sql_dm);
               <div class="submenu">
                 <ul>
                 <?php  while ($row=mysqli_fetch_array($query_dm)) { ?>
-                  <li><a href="index.php?quanly=danhmucsanpham&id=<?php echo $row['id'] ?>"><p style="font-color=black"> <?php echo $row['ten_danh_muc'] ?></p></a></li>
+                  <li><a href="index.php?quanly=danhmucsanpham&id=<?php echo $row['id_danh_muc'] ?>"><p style="font-color=black"> <?php echo $row['ten_danh_muc'] ?></p></a></li>
                  <?php } ?>
                 </ul>
               </div>
@@ -62,7 +62,7 @@ $query_dm=mysqli_query($mysqli,$sql_dm);
               </div>
             </li> 
           
-            <li><a href="">Giỏ hàng</a>
+            <li><a href="index.php?quanly=giohang">Giỏ hàng</a>
             
             </li>
             <li><a href="">Liên hệ</a>

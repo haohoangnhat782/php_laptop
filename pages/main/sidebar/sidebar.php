@@ -12,7 +12,7 @@ $query_dm=mysqli_query($mysqli,$sql_dm);
                                		
 		<?php  while ($row=mysqli_fetch_array($query_dm)) { ?>
                                     <div class="item-brand-filter">
-                                    <a href="index.php?quanly=danhmucsanpham&id=<?php echo $row['id'] ?>">  
+                                    <a href="index.php?quanly=danhmucsanpham&id=<?php echo $row['id_danh_muc'] ?>">  
                                      <p style="font-color=black"> <?php echo $row['ten_danh_muc'] ?></p></a><br>
                                     </div>
                          

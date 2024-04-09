@@ -1,7 +1,7 @@
 <?php
-$sql_sp="SELECT * FROM san_pham,danh_muc where san_pham.ma_danh_muc=danh_muc.id order by san_pham.id DESC limit 4";
+$sql_sp="SELECT * FROM san_pham,danh_muc where san_pham.ma_danh_muc=danh_muc.id_danh_muc order by san_pham.id_san_pham DESC limit 4";
 $query_sp=mysqli_query($mysqli,$sql_sp);
-$sql_sp_noi_bat="SELECT * FROM san_pham,danh_muc where san_pham.ma_danh_muc=danh_muc.id order by san_pham.id DESC limit 8";
+$sql_sp_noi_bat="SELECT * FROM san_pham,danh_muc where san_pham.ma_danh_muc=danh_muc.id_danh_muc order by san_pham.id_san_pham DESC limit 8";
 $query_sp_noi_bat=mysqli_query($mysqli,$sql_sp_noi_bat);
 ?> 
 <div class="body">
@@ -56,7 +56,7 @@ $query_sp_noi_bat=mysqli_query($mysqli,$sql_sp_noi_bat);
           while($row=mysqli_fetch_array($query_sp)){
         ?>
        <div class="product-gallery-one-content-product-item">
-                        <a href="index.php?quanly=chitiet&id=<?php echo $row['id'] ?>">
+                        <a href="index.php?quanly=chitiet&id=<?php echo $row['id_san_pham'] ?>">
                             <img src="images/<?php echo $row['hinh_anh']?>" alt="">
                             <div class="product-gallery-one-content-product-item-text">
                                 <li>
@@ -105,7 +105,7 @@ $query_sp_noi_bat=mysqli_query($mysqli,$sql_sp_noi_bat);
           while($row=mysqli_fetch_array($query_sp_noi_bat)){
         ?>
        <div class="product-gallery-one-content-product-item">
-                        <a href="index.php?quanly=chitiet&id=<?php echo $row['id'] ?>">
+                        <a href="index.php?quanly=chitiet&id=<?php echo $row['id_san_pham'] ?>">
                             <img src="images/<?php echo $row['hinh_anh']?>" alt="">
                             <div class="product-gallery-one-content-product-item-text">
                                 <li>

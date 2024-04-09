@@ -29,7 +29,7 @@
         include('main/filter_product.php');
     } elseif ($tam == 'chitiet') {
         include('pages/main/product.php');  
-    } elseif ($tam == 'cart') {
+    } elseif ($tam == 'giohang') {
         include('pages/main/cart.php');        
     } elseif ($tam == 'authenticate') {
         include('pages/main/Authenticate/authenticate.php');

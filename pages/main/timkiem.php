@@ -9,7 +9,7 @@ if(isset($_POST['timkiem'])){
 }else{
 	$tukhoa='';
 }
-$total_products_query = mysqli_query($mysqli, "SELECT COUNT(*) AS total FROM san_pham,danh_muc where san_pham.ma_danh_muc=danh_muc.id and san_pham.ten_san_pham like '%".$tukhoa."%'  ");
+$total_products_query = mysqli_query($mysqli, "SELECT COUNT(*) AS total FROM san_pham,danh_muc where san_pham.ma_danh_muc=danh_muc.id_danh_muc and san_pham.ten_san_pham like '%".$tukhoa."%'  ");
 $total_products = mysqli_fetch_assoc($total_products_query)['total'];
 
 $total_pages = ceil($total_products / $so_sp);

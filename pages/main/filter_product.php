@@ -5,7 +5,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 1;
 $so_sp = 8;
 $offset = ($page - 1) * $so_sp;
 
-$total_products_query = mysqli_query($mysqli, "SELECT COUNT(*) AS total FROM san_pham,danh_muc where san_pham.ma_danh_muc=danh_muc.id  ");
+$total_products_query = mysqli_query($mysqli, "SELECT COUNT(*) AS total FROM san_pham,danh_muc where san_pham.ma_danh_muc=danh_muc.id_danh_muc  ");
 $total_products = mysqli_fetch_assoc($total_products_query)['total'];
 
 $total_pages = ceil($total_products / $so_sp);

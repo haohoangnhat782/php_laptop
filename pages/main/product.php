@@ -8,7 +8,7 @@
 <body>
 
 <?php  
-$sql_chitiet="SELECT * FROM san_pham,danh_muc WHERE san_pham.ma_danh_muc=danh_muc.id and san_pham.id ='$_GET[id]' LIMIT 1";
+$sql_chitiet="SELECT * FROM san_pham,danh_muc WHERE san_pham.ma_danh_muc=danh_muc.id_danh_muc and san_pham.id_san_pham ='$_GET[id]' LIMIT 1";
 $query_chitiet=mysqli_query($mysqli,$sql_chitiet);
 
 ?>
@@ -43,6 +43,7 @@ $query_chitiet=mysqli_query($mysqli,$sql_chitiet);
                             </div>
                         </div>
                     </div>
+                  
                     <div class="grid-item col-md-7">
                         <div class="d-flex flex-column flex-auto">
                             <div class="product-name text-break fs-4 fw-medium">
@@ -128,19 +129,20 @@ $query_chitiet=mysqli_query($mysqli,$sql_chitiet);
                             </div>
                             <div class="mt-2 bg-body-tertiary">
                                 <div class="d-flex align-items-center">
-                                    <div class="price-default fw-bold text-body-tertiary px-3" style="font-size: 1rem">
+                                    <!-- <div class="price-default fw-bold text-body-tertiary px-3" style="font-size: 1rem">
                                   
                                     <?php echo $row['don_gia'] + $row['don_gia'] * 10 / 100 ?>
-                                    </div>
+                                    </div> -->
                                     <div class="d-flex align-items-center">
                                         <div class="price-details fw-bold text-danger" style="font-size: 1.875rem">
+                                        Giá: 
                                         <?php echo $row['don_gia']?>
                                         </div>
-                                        <div class="voucher">10% GIẢM</div>
+                                        <!-- <div class="voucher">10% GIẢM</div> -->
                                     </div>
                                 </div>
                             </div>
-                            <div class="d-flex align-items-center m-2">
+                            <!-- <div class="d-flex align-items-center m-2">
                                 <div class="me-2">Số Lượng</div>
                                 <div class="d-flex align-items-center">
                                     <div class="btn-group" role="group">
@@ -150,7 +152,7 @@ $query_chitiet=mysqli_query($mysqli,$sql_chitiet);
                                     </div>
                                     <div class="ms-2"><?php echo $row['so_luong']?> sản phẩm có sẵn</div>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="information">
                                 <p>Danh muc: <?php echo $row['ten_danh_muc']?></p>
                                 <p>Dung lượng pin: <?php echo $row['dung_luong_pin']?></p>
@@ -163,15 +165,19 @@ $query_chitiet=mysqli_query($mysqli,$sql_chitiet);
                             </div>
                             <div class="mt-5 d-flex">
                                 <div class="d-flex align-items-center">
-                                    <button type="button" class="btn-tinted" aria-disabled="false">
+                                <form action="pages/main/themgiohang.php?idsanpham=<?php echo $row['id_san_pham']?>" method="POST">
+                                    <button  type="submit" name="themgiohang" class="btn-tinted" aria-disabled="false">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="cart-icon">
                                             <path d="M504.7 320H211.6l6.5 32h268.4c15.4 0 26.8 14.3 23.4 29.3l-5.5 24.3C523.1 414.7 536 433.8 536 456c0 31.2-25.5 56.4-56.8 56-29.8-.4-54.4-24.6-55.2-54.4-.4-16.3 6.1-31 16.8-41.5H231.2C241.6 426.2 248 440.3 248 456c0 31.8-26.5 57.4-58.7 55.9-28.5-1.3-51.8-24.4-53.3-52.9-1.2-22 10.4-41.5 28.1-51.6L93.9 64H24C10.7 64 0 53.3 0 40V24C0 10.7 10.7 0 24 0h102.5c11.4 0 21.2 8 23.5 19.2L159.2 64H552c15.4 0 26.8 14.3 23.4 29.3l-47.3 208C525.6 312.2 515.9 320 504.7 320zM408 168h-48v-40c0-8.8-7.2-16-16-16h-16c-8.8 0-16 7.2-16 16v40h-48c-8.8 0-16 7.2-16 16v16c0 8.8 7.2 16 16 16h48v40c0 8.8 7.2 16 16 16h16c8.8 0 16-7.2 16-16v-40h48c8.8 0 16-7.2 16-16v-16c0-8.8-7.2-16-16-16z" fill="#ee4d2d" />
                                         </svg>
                                         <span style="color: #ee4d2d">Thêm vào giỏ hàng</span>
                                     </button>
-                                    <button type="button" class="btn-buy" aria-disabled="false">
+                                
+                                    
+                    </form>
+                                    <!-- <button type="submit" class="btn-buy" aria-disabled="false">
                                         <span>Mua ngay</span>
-                                    </button>
+                                    </button> -->
                                 </div>
                             </div>
                         </div>

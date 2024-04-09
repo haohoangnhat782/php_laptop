@@ -10,7 +10,7 @@ $total_products = mysqli_fetch_assoc($total_products_query)['total'];
 
 $total_pages = ceil($total_products / $so_sp);
 
-$sql_dm = "SELECT * FROM danh_muc WHERE id='$_GET[id]' LIMIT 1 ";
+$sql_dm = "SELECT * FROM danh_muc WHERE id_danh_muc='$_GET[id]' LIMIT 1 ";
 $query_dm=mysqli_query($mysqli,$sql_dm);
 $row_title=mysqli_fetch_array($query_dm);
 

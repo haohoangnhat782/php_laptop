@@ -8,7 +8,10 @@
     <title>Shop-LapTop</title>
 </head>
 <body>
-    <?php include("config/config.php");
+
+    <?php 
+    session_start();
+    include("config/config.php");
  ?>
 <?php  include('pages/header.php');?>
 <?php  include('pages/menu.php');?>

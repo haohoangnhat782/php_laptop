@@ -7,7 +7,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 1;
 $so_sp = 8;
 $offset = ($page -1) * $so_sp;
 
-$sql_pro = "SELECT * FROM san_pham,danh_muc where san_pham.ma_danh_muc=danh_muc.id order by san_pham.id DESC LIMIT $offset, $so_sp";
+$sql_pro = "SELECT * FROM san_pham,danh_muc where san_pham.ma_danh_muc=danh_muc.id_danh_muc order by san_pham.id_san_pham DESC LIMIT $offset, $so_sp";
 $query_sp = mysqli_query($mysqli, $sql_pro);
 
 
@@ -18,7 +18,7 @@ $query_sp = mysqli_query($mysqli, $sql_pro);
 
                                 ?>
                                     <div class="product-filter-content-product-item">
-                                        <a href="index.php?quanly=chitiet&id=<?php echo $row['id'] ?>">
+                                        <a href="index.php?quanly=chitiet&id=<?php echo $row['id_san_pham']  ?>">
                                             <img src="images/<?php echo $row['hinh_anh'] ?>" alt="">
                                             <div class="product-filter-content-product-item-text">
                                                 <li>
