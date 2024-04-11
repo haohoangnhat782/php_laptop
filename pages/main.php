@@ -21,6 +21,11 @@
     }
 
 
+    if (isset($_POST['ten_truong'])) {
+        $gia_tri = $_POST['ten_truong'];
+    } else {
+        
+    }
 
 
     if ($tam == 'trangchu') {
@@ -35,7 +40,7 @@
         include('pages/main/Authenticate/authenticate.php');
     } elseif ($tam == 'profile') {
         include('pages/main/Profile/profile.php');
-    }
+    } 
     elseif($tam=='danhmucsanpham'){
         include("main/danhmuc.php");
     }  elseif($tam=='timkiem'){
@@ -43,7 +48,7 @@
     } 
     else {
         include('pages/main/index.php');
-    }
+    } 
 
 
     ?>

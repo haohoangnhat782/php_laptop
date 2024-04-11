@@ -194,3 +194,37 @@
     line-height: 20px;
     color: #333333;
 }
+
+#alert-success, #alert-error{
+    position: fixed;
+    width: 50vw;
+    top: 100px;
+    left: 50%;
+    z-index: 10;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    transform: translateX(-50%);
+    animation: showAlert 3s ease-in-out 1 forwards;
+}
+.alert-error{
+    background-color: #D54B3D !important;
+}
+.alert-success{
+    background-color: #20863D !important;
+}
+.alert-warning{
+    background-color: #f58a1e !important;
+}
+
+@keyframes showAlert {
+    0%{
+        opacity: 1;
+    }95%{
+        transform: translateX(0);
+    }100%{
+        transform: translateX(300%);
+        opacity: 0.8;
+        display: none;
+    }
+}
