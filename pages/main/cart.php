@@ -8,10 +8,11 @@
 </head>
 
 <body>
+	<div class="container">
 	<div id="shopping-cart">
 		<div class="txt-heading">Shopping Cart</div>
 
-		<a id="btnEmpty">Empty Cart</a>
+		<a id="btnEmpty"  href="pages/main/themgiohang.php?xoatatca=1">Empty Cart</a>
 			<table class="tbl-cart" cellpadding="10" cellspacing="1">
 				<tbody>
 					<tr>
@@ -23,20 +24,26 @@
 						<th style="text-align:center;" width="5%">Remove</th>
 					</tr>
 					<?php
-					foreach ($_SESSION["cart_item"] as $item) {
-						$item_price = $item["quantity"] * $item["price"];
+					$total_quantity = 0;
+					$total_price = 0;
+					
+				
+					if(isset($_SESSION["cart"])) {
+					foreach ($_SESSION["cart"] as $item) {
+						$item_price = $item["soluong"] * $item["giasp"];
 					?>
 						<tr>
-							<td><img src="<?php echo $item["image"]; ?>" class="cart-item-image" /><?php echo $item["name"]; ?></td>
-							<td><?php echo $item["code"]; ?></td>
-							<td style="text-align:right;"><?php echo $item["quantity"]; ?></td>
-							<td style="text-align:right;"><?php echo "$ " . $item["price"]; ?></td>
+							<td><img src="images/<?php echo $item["hinhanh"]; ?>" class="cart-item-image" /><?php echo $item["tensanpham"]; ?></td>
+							<td><?php echo $item["masp"]; ?></td>
+							<td style="text-align:right;"><?php echo $item["soluong"]; ?></td>
+							<td style="text-align:right;"><?php echo "$ " . $item["giasp"]; ?></td>
 							<td style="text-align:right;"><?php echo "$ " . number_format($item_price, 2); ?></td>
-							<td style="text-align:center;"><a href="index.php?action=remove&code=<?php echo $item["code"]; ?>" class="btnRemoveAction"><img src="icon-delete.png" alt="Remove Item" /></a></td>
+							<td style="text-align:center;"><a href="index.php?action=remove&code=<?php echo $item["masp"]; ?>" class="btnRemoveAction"><img height="30px" width="30px" src="images/icons8-delete-48.png" alt="Remove Item" /></a></td>
 						</tr>
 					<?php
-						$total_quantity += $item["quantity"];
-						$total_price += ($item["price"] * $item["quantity"]);
+
+						$total_quantity += $item["soluong"];
+						$total_price += ($item["giasp"] * $item["soluong"]);
 					}
 					?>
 
@@ -46,7 +53,20 @@
 						<td align="right" colspan="2"><strong><?php echo "$ " . number_format($total_price, 2); ?></strong></td>
 						<td></td>
 					</tr>
+
+					<?php
+					
+
+				}else{
+					?>
+					<tr>
+    <td colspan="8" style="text-align:center;"> <p >Hiện tại giỏ hàng trống</p> </td>
+</tr>
+<?php
+		}
+				?>	
 				</tbody>
 			</table>
+	</div>
 	</div>
 </body>

@@ -4,8 +4,12 @@ $page = isset($_GET['page']) ? $_GET['page'] : 1;
 
 $so_sp = 8;
 $offset = ($page - 1) * $so_sp;
-
-$total_products_query = mysqli_query($mysqli, "SELECT COUNT(*) AS total FROM san_pham,danh_muc where san_pham.ma_danh_muc=danh_muc.id_danh_muc  ");
+if(isset($_POST['timkiem'])){
+	$tukhoa=$_POST['tukhoa'];
+}else{
+	$tukhoa='';
+}
+$total_products_query = mysqli_query($mysqli, "SELECT COUNT(*) AS total FROM san_pham,danh_muc where san_pham.ma_danh_muc=danh_muc.id_danh_muc and san_pham.ten_san_pham like '%".$tukhoa."%'  ");
 $total_products = mysqli_fetch_assoc($total_products_query)['total'];
 
 $total_pages = ceil($total_products / $so_sp);
@@ -24,14 +28,14 @@ $total_pages = ceil($total_products / $so_sp);
               <div class="filter-product-content">
                 
                   <div class="filter-product-content-left">
-                        <?php include('pages/main/sidebar/sidebar.php') ?>
+                        <?php include('pages/main/sidebar/sidebar_timkiem.php') ?>
       
                   </div>
                   <div class="filter-product-content-right">
                       <div class="container-filter-product">
                           <div class="product-filter-content">
                             <div class="product-filter-content-title">
-                              <!-- <p>Danh mục  sản phẩm:</p> -->
+                              <p>Tìm kiếm: <?php echo $tukhoa ?></p>
                             
                       
                             </div>
@@ -72,9 +76,10 @@ $(document).ready(function() {
 
   
     $.ajax({
-        url: 'pages/main/phantrang/sanpham.php',
+        url: 'pages/main/phantrang/sanphamtimkiem.php',
         type: 'GET',
         data: {
+            tukhoa: '<?php echo $tukhoa; ?>', 
       
             page: 1 
         },
@@ -108,9 +113,10 @@ $(document).ready(function() {
         }
         
         $.ajax({
-            url: 'pages/main/phantrang/sanpham.php',
+            url: 'pages/main/phantrang/sanphamtimkiem.php',
             type: 'GET',
             data: {
+                tukhoa: '<?php echo $tukhoa; ?>', 
            
                 page: currentPage
             },

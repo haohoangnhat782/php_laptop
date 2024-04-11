@@ -7,19 +7,23 @@
 
 
 <body>
+<?php 
+
+$sql_dm = "SELECT * FROM danh_muc";
+$query_dm=mysqli_query($mysqli,$sql_dm);
+
+	 ?>
 <section class="menu-bar">
       <div class="container-product">
         <div class="menu-bar-content">
           <ul>
             <li><a href="index.php?quanly=trangchu">Trang Chủ</a></li>
-            <li><a href="index.php?quanly=sanpham">Laptop <i style="margin-left: 5px;" class="fa-solid fa-sort-down"></i></href=>
+            <li><a href="index.php?quanly=danhmucsanpham&id=<?php echo 1 ?>">Laptop <i style="margin-left: 5px;" class="fa-solid fa-sort-down"></i></href=>
               <div class="submenu">
                 <ul>
-                  <li><a href="">Dell</a></li>
-                  <li><a href="">Gaming</a></li>
-                  <li><a href="">HP</a></li>
-                  <li><a href="">Macbook</a></li>
-                  <li><a href="">Dell</a></li>
+                <?php  while ($row=mysqli_fetch_array($query_dm)) { ?>
+                  <li><a href="index.php?quanly=danhmucsanpham&id=<?php echo $row['id_danh_muc'] ?>"><p style="font-color=black"> <?php echo $row['ten_danh_muc'] ?></p></a></li>
+                 <?php } ?>
                 </ul>
               </div>
             </li>
@@ -58,7 +62,7 @@
               </div>
             </li> 
           
-            <li><a href="">Giỏ hàng</a>
+            <li><a href="index.php?quanly=giohang">Giỏ hàng</a>
             
             </li>
             <li><a href="">Liên hệ</a>

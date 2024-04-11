@@ -711,6 +711,7 @@ p.discount-item a{
     
 }
 p.price {
+    margin: 10px;
 
     font-size: 15px;
     color: rgb(233, 38, 38);

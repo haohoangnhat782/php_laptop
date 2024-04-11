@@ -12,8 +12,8 @@ $query_dm=mysqli_query($mysqli,$sql_dm);
                                		
 		<?php  while ($row=mysqli_fetch_array($query_dm)) { ?>
                                     <div class="item-brand-filter">
-                                    <a href="index.php?quanly=danhmucsanpham&id=<?php echo $row['id_danh_muc'] ?>">  
-                                     <p style="font-color=black"> <?php echo $row['ten_danh_muc'] ?></p></a><br>
+                                      <input type="checkbox"  name="hp" >
+                                      <label for="hp"><a href="index.php?quanly=danhmucsanpham&id=<?php echo $row['id_danh_muc'] ?>"><p style="font-color=black"> <?php echo $row['ten_danh_muc'] ?></p></a></label><br>
                                     </div>
                          
                                     <?php } ?>
@@ -97,7 +97,7 @@ $query_dm=mysqli_query($mysqli,$sql_dm);
       
                               </div>
                           </div> -->
-                          <!-- <div class="filter-product-Onerow">
+                          <div class="filter-product-Onerow">
                             <p>Mức giá</p>
                             <div class="filter-product-content-Onerow">
                                 <div class="fitler-product-content-item-Onerow">
@@ -129,4 +129,4 @@ $query_dm=mysqli_query($mysqli,$sql_dm);
                                 </div>
                             </div>
 
-                      </div> -->
+                      </div>

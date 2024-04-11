@@ -7,12 +7,22 @@
     <script src="https://kit.fontawesome.com/e634a8a20d.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script defer src="js/authenticate.js"></script>
-
 </head>
 
 <body>
     <div class="body-container">
         <div class="container">
+            <?php
+            if (isset($_GET['quanly']) && $_GET['quanly'] == 'authenticate' && isset($_GET['stt']) && $_GET['stt'] == 200) {
+                echo "<div id='alert-success' class='alert alert-success' role='alert'>Đăng ký thành công!</div>";
+            } elseif (isset($_GET['quanly']) && $_GET['quanly'] == 'authenticate' && isset($_GET['stt']) && $_GET['stt'] == 409) {
+                echo "<div id='alert-error' class='alert alert-warning' role='alert'>Email đã tồn tại!</div>";
+            } elseif ((isset($_GET['quanly']) && $_GET['quanly'] == 'authenticate' && isset($_GET['stt']) && $_GET['stt'] == 404)) {
+                echo "<div id='alert-error' class='alert alert-error' role='alert'>Đăng ký thất bại!</div>";
+            } elseif ((isset($_GET['quanly']) && $_GET['quanly'] == 'authenticate' && isset($_GET['stt']) && $_GET['stt'] == 400)) {
+                echo "<div id='alert-error' class='alert alert-error' role='alert'>Vui lòng điền đầy đủ thông tin!</div>";
+            }
+            ?>
             <div class="row" id="main-container">
                 <div class="main-column">
                     <main>
@@ -50,6 +60,7 @@
                                         Đăng ký
                                     </span>
                                 </div>
+
                                 <div class="form-container">
                                     <?php
                                     if (isset($_GET['quanly']) && isset($_GET['hd'])) {
@@ -59,6 +70,7 @@
                                         $tam = '';
                                         $hd = '';
                                     }
+
 
 
                                     if ($tam == 'authenticate' & $hd == 'dn') {
@@ -74,7 +86,7 @@
                                 </div>
                                 <div class="wrapper">
                                     <span></span>
-                                    Hoặc bằng đăng nhập bằng
+                                    Hoặc đăng nhập bằng
                                     <span></span>
                                 </div>
                                 <div class="log-google log-social" title="Google Login">

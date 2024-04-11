@@ -3,6 +3,7 @@
     <?php echo "<link rel='stylesheet' type='text/css' href='css/styleIndex1.css' />"; ?>
     <script defer src="js/script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 </head>
 
@@ -20,23 +21,34 @@
     }
 
 
+    if (isset($_POST['ten_truong'])) {
+        $gia_tri = $_POST['ten_truong'];
+    } else {
+        
+    }
 
 
     if ($tam == 'trangchu') {
         include('pages/main/index.php');
-    } elseif ($tam == 'sanpham') {
-        include('pages/main/filter_product.php');
+    } elseif ($tam == 'sanphamall') {
+        include('main/filter_product.php');
     } elseif ($tam == 'chitiet') {
         include('pages/main/product.php');  
-    } elseif ($tam == 'cart') {
+    } elseif ($tam == 'giohang') {
         include('pages/main/cart.php');        
     } elseif ($tam == 'authenticate') {
         include('pages/main/Authenticate/authenticate.php');
     } elseif ($tam == 'profile') {
         include('pages/main/Profile/profile.php');
-    } else {
+    } 
+    elseif($tam=='danhmucsanpham'){
+        include("main/danhmuc.php");
+    }  elseif($tam=='timkiem'){
+        include("main/timkiem.php");
+    } 
+    else {
         include('pages/main/index.php');
-    }
+    } 
 
 
     ?>

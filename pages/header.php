@@ -29,9 +29,9 @@
                             Danh mục
                         </button>
                         <div class="search-container">
-                            <form>
-                                <input type="text" placeholder="Tìm kiếm sản phẩm" name="search" class="search-input">
-                                <button type="submit" class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+                            <form action="index.php?quanly=timkiem" method="POST">
+                                <input type="text" placeholder="Tìm kiếm sản phẩm" name="tukhoa" class="search-input">
+                                <button type="submit" class="search-btn" name="timkiem"><i class="fa fa-search" aria-hidden="true"></i></button>
                             </form>
                         </div>
                     </div>
@@ -47,9 +47,23 @@
                             <br>
                             <span>Gần bạn</span>
                         </div>
-                        <a href="index.php?quanly=cart">
+                        <a href="index.php?quanly=giohang">
                             <div class="cart">
-                                <span class="nbc">0</span>
+                                <span class="nbc">
+                                    <?php
+                                    $soluong=0;
+                                      if(isset($_SESSION["cart"])) {
+                                        foreach ($_SESSION["cart"] as $item) {
+                                            $soluong+=1;
+
+                                        }}
+
+                                       echo $soluong;
+                                    ?>
+                                    
+
+
+                                </span>
                             </div>
                         </a>
                         <div class="member-btn" title="Thành viên - Đăng ký - Đăng nhập"><a href="index.php?quanly=profile">

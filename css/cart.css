@@ -8,6 +8,7 @@ body {
 	margin: 40px;
 }
 
+
 #product-grid {
 	margin: 40px;
 }
@@ -25,6 +26,7 @@ body {
 	color: #211a1a;
 	border-bottom: 1px solid #E0E0E0;
 	overflow: auto;
+	
 }
 
 #btnEmpty {
@@ -109,9 +111,10 @@ body {
 }
 
 .cart-item-image {
-	width: 30px;
-    height: 30px;
-    border-radius: 50%;
+	width: 100px;
+    height: 100px;
+    border-radius: 5px;
+
     border: #E0E0E0 1px solid;
     padding: 5px;
     vertical-align: middle;

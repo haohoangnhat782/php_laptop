@@ -6,21 +6,29 @@
 </head>
 
 <body>
+
+<?php  
+$sql_chitiet="SELECT * FROM san_pham,danh_muc WHERE san_pham.ma_danh_muc=danh_muc.id_danh_muc and san_pham.id_san_pham ='$_GET[id]' LIMIT 1";
+$query_chitiet=mysqli_query($mysqli,$sql_chitiet);
+
+?>
     <div class="body-container">
         <div class="container">
             <main id="main-container">
+
                 <div class="grid-members row">
+                    <?php while($row=mysqli_fetch_array($query_chitiet)){ ?>
                     <div class="grid-item col-md-5">
                         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="../../images/visa.svg" class="d-block w-100" alt="Image 1">
+                                    <img src="images/<?php echo $row['hinh_anh']?>" class="d-block w-100" alt="Image 1">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="../../images/fb.svg" class="d-block w-100" alt="Image 2">
+                                    <img src="images/<?php echo $row['hinh_anh']?>" class="d-block w-100" alt="Image 2">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="../../images/ytb.svg" class="d-block w-100" alt="Image 3">
+                                    <img src="images/<?php echo $row['hinh_anh']?>" class="d-block w-100" alt="Image 3">
                                 </div>
                             </div>
                             <div class="carousel-control">
@@ -35,13 +43,14 @@
                             </div>
                         </div>
                     </div>
+                  
                     <div class="grid-item col-md-7">
                         <div class="d-flex flex-column flex-auto">
                             <div class="product-name text-break fs-4 fw-medium">
-                                <span>Laptop Acer Aspire 3 A314 35 C3KS N5100/4GB/256GB/Win11 (NX.A7SSV.009)</span>
+                                <span><?php echo $row['ten_san_pham']?></span>
                             </div>
                             <div class="d-flex mt-2">
-                                <button class="d-flex bg-transparent border-0 px-4">
+                                <!-- <button class="d-flex bg-transparent border-0 px-4">
                                     <div class="text-danger fw-medium border-bottom border-danger">
                                         4.9
                                     </div>
@@ -99,8 +108,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                </button>
-                                <button class="d-flex bg-transparent border-0 px-4">
+                                </button> -->
+                                <!-- <button class="d-flex bg-transparent border-0 px-4">
                                     <div class="fw-medium border-bottom border-secondary" style="font-size: 1rem">
                                         25k
                                     </div>
@@ -116,22 +125,24 @@
                                     <div class="ms-1 text-body-secondary">
                                         Đã Bán
                                     </div>
-                                </button>
+                                </button> -->
                             </div>
                             <div class="mt-2 bg-body-tertiary">
                                 <div class="d-flex align-items-center">
-                                    <div class="price-default fw-bold text-body-tertiary px-3" style="font-size: 1rem">
-                                        220.000
-                                    </div>
+                                    <!-- <div class="price-default fw-bold text-body-tertiary px-3" style="font-size: 1rem">
+                                  
+                                    <?php echo $row['don_gia'] + $row['don_gia'] * 10 / 100 ?>
+                                    </div> -->
                                     <div class="d-flex align-items-center">
                                         <div class="price-details fw-bold text-danger" style="font-size: 1.875rem">
-                                            110.000
+                                        Giá: 
+                                        <?php echo $row['don_gia']?>
                                         </div>
-                                        <div class="voucher">50% GIẢM</div>
+                                        <!-- <div class="voucher">10% GIẢM</div> -->
                                     </div>
                                 </div>
                             </div>
-                            <div class="d-flex align-items-center m-2">
+                            <!-- <div class="d-flex align-items-center m-2">
                                 <div class="me-2">Số Lượng</div>
                                 <div class="d-flex align-items-center">
                                     <div class="btn-group" role="group">
@@ -139,24 +150,39 @@
                                         <input type="text" class="form-control border-light-subtle text-center quantity-input" aria-valuenow="1" value="1" style="max-width: 50px;">
                                         <button type="button" class="btn btn-outline-secondary increase" aria-label="Increase">+</button>
                                     </div>
-                                    <div class="ms-2">210 sản phẩm có sẵn</div>
+                                    <div class="ms-2"><?php echo $row['so_luong']?> sản phẩm có sẵn</div>
                                 </div>
+                            </div> -->
+                            <div class="information">
+                                <p>Danh muc: <?php echo $row['ten_danh_muc']?></p>
+                                <p>Dung lượng pin: <?php echo $row['dung_luong_pin']?></p>
+                                <p>Màn hình: <?php echo $row['man_hinh']?></p>
+                                <p>CPU: <?php echo $row['cpu']?></p>
+                                <p>Ram: <?php echo $row['ram']?></p>
+                                <p>Thông tin chung: <?php echo $row['thong_tin_chung']?></p>
+                                <p>Bảo hành: <?php echo $row['bao_hanh']?></p>
+
                             </div>
                             <div class="mt-5 d-flex">
                                 <div class="d-flex align-items-center">
-                                    <button type="button" class="btn-tinted" aria-disabled="false">
+                                <form action="pages/main/themgiohang.php?idsanpham=<?php echo $row['id_san_pham']?>" method="POST">
+                                    <button  type="submit" name="themgiohang" class="btn-tinted" aria-disabled="false">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="cart-icon">
                                             <path d="M504.7 320H211.6l6.5 32h268.4c15.4 0 26.8 14.3 23.4 29.3l-5.5 24.3C523.1 414.7 536 433.8 536 456c0 31.2-25.5 56.4-56.8 56-29.8-.4-54.4-24.6-55.2-54.4-.4-16.3 6.1-31 16.8-41.5H231.2C241.6 426.2 248 440.3 248 456c0 31.8-26.5 57.4-58.7 55.9-28.5-1.3-51.8-24.4-53.3-52.9-1.2-22 10.4-41.5 28.1-51.6L93.9 64H24C10.7 64 0 53.3 0 40V24C0 10.7 10.7 0 24 0h102.5c11.4 0 21.2 8 23.5 19.2L159.2 64H552c15.4 0 26.8 14.3 23.4 29.3l-47.3 208C525.6 312.2 515.9 320 504.7 320zM408 168h-48v-40c0-8.8-7.2-16-16-16h-16c-8.8 0-16 7.2-16 16v40h-48c-8.8 0-16 7.2-16 16v16c0 8.8 7.2 16 16 16h48v40c0 8.8 7.2 16 16 16h16c8.8 0 16-7.2 16-16v-40h48c8.8 0 16-7.2 16-16v-16c0-8.8-7.2-16-16-16z" fill="#ee4d2d" />
                                         </svg>
                                         <span style="color: #ee4d2d">Thêm vào giỏ hàng</span>
                                     </button>
-                                    <button type="button" class="btn-buy" aria-disabled="false">
+                                
+                                    
+                    </form>
+                                    <!-- <button type="submit" class="btn-buy" aria-disabled="false">
                                         <span>Mua ngay</span>
-                                    </button>
+                                    </button> -->
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <?php } ?>
                 </div>
             </main>
         </div>

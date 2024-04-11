@@ -5,10 +5,14 @@ $page = isset($_GET['page']) ? $_GET['page'] : 1;
 $so_sp = 8;
 $offset = ($page - 1) * $so_sp;
 
-$total_products_query = mysqli_query($mysqli, "SELECT COUNT(*) AS total FROM san_pham,danh_muc where san_pham.ma_danh_muc=danh_muc.id_danh_muc  ");
+$total_products_query = mysqli_query($mysqli, "SELECT COUNT(*) AS total FROM san_pham WHERE ma_danh_muc='$_GET[id]'");
 $total_products = mysqli_fetch_assoc($total_products_query)['total'];
 
 $total_pages = ceil($total_products / $so_sp);
+
+$sql_dm = "SELECT * FROM danh_muc WHERE id_danh_muc='$_GET[id]' LIMIT 1 ";
+$query_dm=mysqli_query($mysqli,$sql_dm);
+$row_title=mysqli_fetch_array($query_dm);
 
 
 
@@ -31,7 +35,7 @@ $total_pages = ceil($total_products / $so_sp);
                       <div class="container-filter-product">
                           <div class="product-filter-content">
                             <div class="product-filter-content-title">
-                              <!-- <p>Danh mục  sản phẩm:</p> -->
+                              <p>Danh mục  sản phẩm:<?php echo $row_title['ten_danh_muc'] ?></p>
                             
                       
                             </div>
@@ -45,7 +49,7 @@ $total_pages = ceil($total_products / $so_sp);
                                 <?php
     // Giả sử $total_pages là tổng số trangư\
     for ($i = 1; $i <= $total_pages; $i++) {
-        echo "<a href='index.php?quanly=sanphamall&page=$i'>$i</a>";
+        echo "<a href='index.php?quanly=danhmucsanpham&id=$_GET[id]&page=$i'>$i</a>";
 
     }
     ?>
@@ -72,10 +76,10 @@ $(document).ready(function() {
 
   
     $.ajax({
-        url: 'pages/main/phantrang/sanpham.php',
+        url: 'pages/main/phantrang/phantrangtheodm.php',
         type: 'GET',
         data: {
-      
+            id: '<?php echo $_GET['id']; ?>', 
             page: 1 
         },
         success: function(response) {
@@ -108,10 +112,10 @@ $(document).ready(function() {
         }
         
         $.ajax({
-            url: 'pages/main/phantrang/sanpham.php',
+            url: 'pages/main/phantrang/phantrangtheodm.php',
             type: 'GET',
             data: {
-           
+                id: '<?php echo $_GET['id']; ?>', 
                 page: currentPage
             },
             success: function(response) {
