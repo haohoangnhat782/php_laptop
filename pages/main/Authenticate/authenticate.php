@@ -12,17 +12,9 @@
 <body>
     <div class="body-container">
         <div class="container">
-            <?php
-            if (isset($_GET['quanly']) && $_GET['quanly'] == 'authenticate' && isset($_GET['stt']) && $_GET['stt'] == 200) {
-                echo "<div id='alert-success' class='alert alert-success' role='alert'>Đăng ký thành công!</div>";
-            } elseif (isset($_GET['quanly']) && $_GET['quanly'] == 'authenticate' && isset($_GET['stt']) && $_GET['stt'] == 409) {
-                echo "<div id='alert-error' class='alert alert-warning' role='alert'>Email đã tồn tại!</div>";
-            } elseif ((isset($_GET['quanly']) && $_GET['quanly'] == 'authenticate' && isset($_GET['stt']) && $_GET['stt'] == 404)) {
-                echo "<div id='alert-error' class='alert alert-error' role='alert'>Đăng ký thất bại!</div>";
-            } elseif ((isset($_GET['quanly']) && $_GET['quanly'] == 'authenticate' && isset($_GET['stt']) && $_GET['stt'] == 400)) {
-                echo "<div id='alert-error' class='alert alert-error' role='alert'>Vui lòng điền đầy đủ thông tin!</div>";
-            }
-            ?>
+            <div id='alert-error' class='alert alert-error' role='alert'>Vui lòng điền đầy đủ thông tin!</div>
+            <div id='alert-success' class='alert alert-success' role='alert'>Đăng ký thành công!</div>
+
             <div class="row" id="main-container">
                 <div class="main-column">
                     <main>

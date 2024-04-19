@@ -47,3 +47,20 @@ $(document).ready(function (event) {
     });
   });
 });
+
+function handleLogout() {
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "config/handleLogout.php", true);
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+          var response = JSON.parse(xhr.responseText);
+          if (response.status === "success") {
+              window.location.href = "index.php?quanly=trangchu";
+          } else {
+              console.error("Logout failed");
+          }
+      }
+  };
+  xhr.send();
+}

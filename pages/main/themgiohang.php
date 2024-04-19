@@ -1,3 +1,10 @@
+<?php
+
+if (!isset($_SESSION["user"]) || empty($_SESSION["user"])) {
+	echo "<script type='text/javascript'>window.top.location='/xampp/htdocs/php_laptop/index.php?quanly=authenticate';</script>"; exit;
+exit();
+}
+?>
 <?php 
 session_start();
 include("../../config/config.php");

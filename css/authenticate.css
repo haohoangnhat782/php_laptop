@@ -205,7 +205,8 @@
     color: white;
     font-weight: bold;
     transform: translateX(-50%);
-    animation: showAlert 3s ease-in-out 1 forwards;
+    animation: showAlert 1.5s ease-in-out 1 forwards;
+    display: none;
 }
 .alert-error{
     background-color: #D54B3D !important;
@@ -225,6 +226,5 @@
     }100%{
         transform: translateX(300%);
         opacity: 0.8;
-        display: none;
     }
 }

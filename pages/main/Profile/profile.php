@@ -6,8 +6,6 @@ if (isset($_GET['quanly']) && isset($_GET['hd'])) {
     $tam = '';
     $hd = '';
 }
-
-
 ?>
 
 <head>
@@ -60,9 +58,8 @@ if (isset($_GET['quanly']) && isset($_GET['hd'])) {
                                     </span>
                                 </li>
                                 <li class="profile-setting-item">
-                                    <span class="profile-setting-link">
+                                    <span class="profile-setting-link" onclick="handleLogout()">
                                         <i class="fa-solid fa-power-off profile-setting-item-icon"></i>
-                                        <!-- <a href="">Đăng xuất</a> -->
                                         Đăng xuất
                                     </span>
                                 </li>

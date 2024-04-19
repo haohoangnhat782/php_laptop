@@ -1,4 +1,4 @@
-<form action="pages/main/database/auth.php" method="POST" class="frmRegister" id="frmRegister">
+<form  id="frmRegister" action="config/handleRegister.php" method="POST" class="frmRegister">
     <div class="box">
         <input onblur="validateName()" type="text" class="form-control" name="reg_name" id="reg_name" placeholder="Họ và tên*">
     </div>
