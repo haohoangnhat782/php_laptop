@@ -1,5 +1,5 @@
 <?php 
-include('../../../connect_db.php');
+include('../../config/connect_db.php');
 
 
 if(isset($_GET['set_trang_thai'])&&isset($_GET['id_don_hang'])){

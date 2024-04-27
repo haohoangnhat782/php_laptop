@@ -1,6 +1,6 @@
 <?php
    session_start();
-   include("../fuction.php");
+   include("config/fuction.php");
   if(!isset($_SESSION['current_user'])) {
     header("Location:login.php"); 
       }
@@ -21,7 +21,7 @@
 </head>
 <body>
 <?php 
-include("../connect_db.php");
+include("config/connect_db.php");
 
         include("modules/header.php");
          include("modules/menu1.php");

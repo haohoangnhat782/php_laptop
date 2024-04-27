@@ -53,7 +53,7 @@ $query_donhang=mysqli_query($con,$sql_donhang);
                       
                      ?>
 
-                     <button class="btn bg-blue"><a href="modules/qldonhang/xuly.php?set_trang_thai=0&id_don_hang=<?php echo $row['id_don_hang'] ?>">Đơn hàng mới</a></button>
+                     <button class="btn bg-blue"><a href="javascript:void(0);" onclick="confirmDelete(<?php echo $row['id_don_hang'] ?>)">Đơn hàng mới</a></button>
                    <?php } else {
                     ?>
                            <button class="btn bg-blue"><a >Đơn hàng mới</a></button>
@@ -68,7 +68,9 @@ $query_donhang=mysqli_query($con,$sql_donhang);
                     <td style="  text-align: center;"> 
           <?php if (checkPrivilege('action=quanlydonhang&query=xemchitiet&id='.$row['id_don_hang'])) { ?>
                            
-                        <button class="btn bg-blue"> <a href="?action=quanlydonhang&query=xemchitiet&id=<?php echo $row['id_don_hang'] ?>">Xem chi tiết</a></button>
+                        <button class="btn bg-blue">
+                            <!-- //<a href="javascript:void(0);" onclick="confirmDelete(<?php echo $row['id_san_pham']; ?>)"> -->
+                        <a href="?action=quanlydonhang&query=xemchitiet&id=<?php echo $row['id_don_hang'] ?>">Xem chi tiết</a></button>
                     <?php } ?>
                     
                     </td>
@@ -83,6 +85,13 @@ $query_donhang=mysqli_query($con,$sql_donhang);
             <div class="clear-both"></div>
         </div>
     </div>
+    <script>
+    function confirmDelete(Id) {
+        if (confirm("Xác nhận duyệt đơn hàng  này không?")) {
+            window.location.href = "modules/qldonhang/xuly.php?set_trang_thai=0&id_don_hang=" + Id;
+        }
+    }
+</script>
     <?php
 
 ?>

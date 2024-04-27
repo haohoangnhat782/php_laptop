@@ -9,10 +9,10 @@ and open the template in the editor.
         <title></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="../css/admin_style4.css" >
-        <link rel="stylesheet" href="../css/table.css">
-        <link rel="stylesheet" href="../css/sidebar.css">
-        <link rel="stylesheet" type="text/css" href="../css/dashboard.css" >
+        <link rel="stylesheet" type="text/css" href="css/admin_style1.css" >
+        <link rel="stylesheet" href="css/table.css">
+        <link rel="stylesheet" href="css/sidebar.css">
+        <link rel="stylesheet" type="text/css" href="css/dashboard.css" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"  rel="stylesheet" />
         <script src="../resources/ckeditor/ckeditor.js"></script>

@@ -22,7 +22,7 @@ if (!empty($_SESSION['current_user'])) {
                 }
                 ?>
                 <form id="" method="POST" action="modules/qlthanhvien/xuly.php" enctype="multipart/form-data">
-                    <input type="submit" title="Lưu thành viên" value="save" name="save" />
+                    <!-- <input type="submit" title="Lưu thành viên" value="save" name="save" /> -->
                     <input type="hidden" name="user_id" value="<?= $_GET['id'] ?>" />
                     <div class="clear-both"></div>
                     <?php foreach ($privilegeGroup as $group) { ?>
@@ -45,6 +45,9 @@ if (!empty($_SESSION['current_user'])) {
                             </ul>
                         </div>
                     <?php } ?>
+
+                    <button class="btn-submit" name="save">Lưu phân quyền</button>
+
                 </form>
             <?php } ?>
         </div>

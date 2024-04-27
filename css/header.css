@@ -1,0 +1,168 @@
+@import "normalize-css.css";
+
+.fix-top {
+    position: fixed;
+    top     : 0;
+    left    : 0;
+    right   : 0;
+    z-index : 9999;
+}
+
+.top-header {
+    background: #FF6700;
+}
+
+.top-header .container {
+    width  : 1200px;
+    padding: 0;
+}
+
+.menu-store {
+    display        : flex;
+    height         : 60px;
+    align-items    : center;
+    justify-content: space-between;
+    grid-gap       : 20px;
+}
+
+.menu-store .logo-site .logo {
+    height: 40px;
+    width : auto;
+}
+
+.menu-store .menu-center {
+    grid-gap   : 20px;
+    display    : flex;
+    align-items: center;
+}
+
+.menu-store .menu-center .cate-btn {
+    padding         : 5px 15px;
+    background-color: #FFA366;
+    position        : relative;
+    border-radius   : 3px;
+    font-weight     : 500;
+    font-size       : 14px;
+    color           : #FFFFFF;
+    outline         : none;
+    border          : none;
+    display         : flex;
+    align-items     : center;
+    line-height     : normal;
+    grid-gap        : 10px;
+    height          : 40px;
+}
+
+.cate-menu ul {
+    background-color: white;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.menu-store .menu-center .search-container {
+    height: 40px;
+}
+
+.menu-store .menu-center .search-container form {
+    display : flex;
+    position: relative;
+    width   : 500px;
+    margin  : 0;
+}
+
+.menu-store .menu-center .search-container .search-input {
+    border-radius: 4px;
+    color        : #111;
+    padding      : 0 10px;
+    width        : 100%;
+    border       : none;
+    height       : 40px;
+    outline      : none;
+}
+
+.menu-store .menu-center .search-container .search-btn {
+    height          : 40px;
+    background-color: #4CAF50;
+    border          : none;
+    color           : white;
+    padding         : 15px 32px;
+    text-align      : center;
+    text-decoration : none;
+    display         : inline-flex;
+    font-size       : 16px;
+    margin          : 0px 6px;
+    cursor          : pointer;
+    border-radius   : 4px;
+    transition      : background-color 0.3s ease;
+}
+
+.menu-store .menu-center .search-container .search-btn i {
+    text-align: center;
+}
+
+.menu-store .menu-center .search-container .search-btn:hover {
+    background-color: #45a049;
+}
+
+.menu-store .right-menu {
+    display    : flex;
+    align-items: center;
+    grid-gap   : 30px;
+}
+
+.menu-store .right-menu div {
+    display    : block;
+    color      : #fff;
+    font-size  : 13px;
+    line-height: 18px;
+}
+
+.menu-store .right-menu .hotline-menu {
+    padding   : 0 0 0 40px;
+    background: url("../images/phone-call.svg") left center no-repeat;
+}
+
+.menu-store .right-menu .address {
+    padding   : 0 0 0 30px;
+    background: url("../images/store.svg") left center no-repeat;
+    position  : relative;
+}
+
+.menu-store .right-menu div.cart {
+    background : url("../images/cart.svg") center no-repeat;
+    display    : flex;
+    align-items: center;
+    width      : 28px;
+    height     : 36px;
+    padding    : 0;
+    position   : relative;
+    cursor     : pointer;
+}
+
+.menu-store .right-menu .cart .nbc {
+    position       : absolute;
+    right          : -8px;
+    top            : -2px;
+    width          : 15px;
+    height         : 15px;
+    font-weight    : 600;
+    font-size      : 12px;
+    color          : #FF6700;
+    background     : #fff;
+    border-radius  : 100%;
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+    line-height    : normal;
+    font-family    : "Semibold";
+}
+
+.menu-store .right-menu div.member-btn {
+    padding        : 0;
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+    width          : fit-content;
+    height         : 36px;
+    cursor         : pointer;
+}

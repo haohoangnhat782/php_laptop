@@ -1,5 +1,5 @@
  <?php
- include("../../../connect_db.php");
+include('../../config/connect_db.php');
            if(isset($_POST['save'])){           
            
                 $data = $_POST;

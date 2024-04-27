@@ -31,6 +31,11 @@
            include("modules/qlsanpham/sanpham.php");
        
     }
+    
+    elseif ($tam=='quanlysanpham' &&$query=='xemchitiet'){
+        include("modules/qlsanpham/xemchitiet.php");
+    
+ }
        elseif ($tam=='quanlysanpham' &&$query=='them'){
            include("modules/qlsanpham/them.php");
        

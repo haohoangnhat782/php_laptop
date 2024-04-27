@@ -1,5 +1,6 @@
+
 <?php
-include("../connect_db.php");
+include("config/connect_db.php");
 session_start();
 
 
@@ -34,43 +35,29 @@ if (isset($_POST['dangnhap'])){
 }
 
 ?>
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Admin-Laptop</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        .box-content {
-            margin: 0 auto;
-            width: 800px;
-            border: 1px solid #ccc;
-            text-align: center;
-            padding: 20px;
-        }
-
-        #user_login form {
-            width: 200px;
-            margin: 40px auto;
-        }
-
-        #user_login form input {
-            margin: 5px 0;
-        }
-    </style>
+    <title>Document</title>
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-
-<div id="user_login" class="box-content">
-    <h1>Đăng nhập tài khoản</h1>
-    <form  method="post" autocomplete="off">
-        <label>Username</label><br>
-        <input type="text" name="username" value=""><br>
-        <label>Password</label><br>
-        <input type="password" name="password" value=""><br><br>
-        <input type="submit" name="dangnhap" value="Đăng nhập">
+    <div class="login">
+        <form  method="post" autocomplete="off">
+        <h2>Login</h2>
+        <br>
+    <p>Username: </p>
+    <br>
+    <input type="text" name="username" placeholder="Enter Username">
+    <br>
+    <p>Password:</p>
+    <br>
+    <input type="password"  name="password" placeholder="Enter Password" >
+    <br>
+    <button type="submit" name="dangnhap">Login</button>
     </form>
-</div>
+    </div>
 </body>
 </html>

@@ -50,13 +50,15 @@ $query_sanpham=mysqli_query($con,$sql_sanpham);
                 <tr>
                     <td style="  text-align: center;"><?= $i++ ?> </td>
                     <td><?= $row['id_san_pham'] ?></td>
-                    <td><img src="<?= $row['hinh_anh'] ?>" alt=""></td>
+                    <td><img src="modules/qlsanpham/uploads/<?php echo $row['hinh_anh'] ?>" alt=""></td>
              <td>       <?php 
         $ten_san_pham = $row['ten_san_pham'];
         echo (strlen($ten_san_pham) > 40) ? substr($ten_san_pham, 0, 40) . '...' : $ten_san_pham;
     ?></td>
+      
                     <td><?= $row['so_luong'] ?></td>
                     <td><?= $row['don_gia'] ?></td>
+               
                     <!-- <td><?= $row['ten_danh_muc'] ?></td>
                     <td><?= $row['cpu'] ?></td>
                     <td><?= $row['ram'] ?></td>
@@ -108,7 +110,7 @@ $query_sanpham=mysqli_query($con,$sql_sanpham);
     </div>
     <script>
     function confirmDelete(Id) {
-        if (confirm("Bạn có muốn xóa thành viên này không?")) {
+        if (confirm("Bạn có muốn xóa sản phẩm này không?")) {
             window.location.href = "modules/qlsanpham/xuly.php?action=quanlysanpham&query=xoa&id=" + Id;
         }
     }
