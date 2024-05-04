@@ -17,13 +17,19 @@ function handleSubmitLogin($mysqli)
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $query = "SELECT * FROM  tbl_taikhoan,nguoi_dung WHERE TenDN = '$email' AND Mat_khau = '$password' AND TTTK=1 ";
+    $query = "SELECT * FROM tbl_taikhoan, nguoi_dung 
+    WHERE tbl_taikhoan.TenDN = '$email' 
+    AND tbl_taikhoan.Mat_khau = '$password' 
+    AND tbl_taikhoan.TTTK = 1  
+    AND nguoi_dung.id_nguoi_dung = tbl_taikhoan.MaTK";
+
    //$query = "SELECT * FROM nguoi_dung,tbl_taikhoan,nguoidung_vaitro WHERE tbl_taikhoan.TenDN = '$email' and   AND tbl_taikhoan.Mat_khau = '$password' and nguoi_dung.id_nguoi_dung=tbl_taikhoan.MaTK and nguoi_dung.id_nguoi_dung=nguoidung_vaitro.ma_nguoi_dung and nguoidung_vaitro.ma_vai_tro=4 and tbl_taikhoan.TTTK=1";
     $user = $mysqli->query($query);
 
     if ($user->num_rows > 0) {
         $_SESSION['login'] = true;
         $row = $user->fetch_assoc();
+     
          $_SESSION['userId']= $row["id_nguoi_dung"];
 
         echo "Đăng nhập thành công";
@@ -43,7 +49,30 @@ function handleSubmitRegister($mysqli)
     $diachi = $_POST["dia_chi"];
     $time_tk=date("Y-m-d");
     $Trang_thai=1;
-   
+    $diachi1 = trim($diachi); 
+    if (empty($diachi1)) {
+
+        echo "Địa chỉ không được để trống";
+        exit;
+    }
+    if (!preg_match('/^KH\d{5}$/', $makh)) {
+        echo "Mã khách khách phải bắt đầu KH rồi 5 chữ số - KH00001";
+        exit;
+    }
+    if (!preg_match('/@gmail\.com$/', $email)) {
+        echo "Địa chỉ email phải là địa chỉ Gmail";
+        exit;
+    }
+    if (!preg_match("/^0\d{9}$/", $tel)) {
+        echo "Số điện thoại không hợp lệ";
+        exit;
+    }
+
+    if (!preg_match("/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/", $password)) {
+
+        echo "Mật khẩu phải ít nhất 6 kí tự chứa số và chữ";
+        exit;
+    }
 $check_makh_sql = "SELECT * FROM nguoi_dung WHERE id_nguoi_dung = '$makh'";
 $query_checkMaKH=mysqli_query($mysqli,$check_makh_sql);
 

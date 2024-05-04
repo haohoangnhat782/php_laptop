@@ -1,7 +1,7 @@
 <?php
-$sql_sp = "SELECT * FROM san_pham,danh_muc where san_pham.ma_danh_muc=danh_muc.id_danh_muc order by san_pham.id_san_pham DESC limit 4";
+$sql_sp = "SELECT * FROM san_pham,danh_muc where san_pham.ma_danh_muc=danh_muc.id_danh_muc and san_pham.trang_thai=1 order by san_pham.id_san_pham DESC limit 4";
 $query_sp = mysqli_query($mysqli, $sql_sp);
-$sql_sp_noi_bat = "SELECT * FROM san_pham,danh_muc where san_pham.ma_danh_muc=danh_muc.id_danh_muc order by san_pham.id_san_pham DESC limit 8";
+$sql_sp_noi_bat = "SELECT * FROM san_pham,danh_muc where san_pham.ma_danh_muc=danh_muc.id_danh_muc and san_pham.trang_thai=1 order by san_pham.id_san_pham DESC limit 8";
 $query_sp_noi_bat = mysqli_query($mysqli, $sql_sp_noi_bat);
 ?>
 
@@ -60,12 +60,12 @@ $query_sp_noi_bat = mysqli_query($mysqli, $sql_sp_noi_bat);
           ?>
             <div class="product-gallery-one-content-product-item">
               <a href="index.php?quanly=chitiet&id=<?php echo $row['id_san_pham'] ?>">
-                <img src="admincp/modules/qlsanpham/uploads/<?php echo $row['hinh_anh'] ?>" alt="">
+                <img src="admin/images/<?php echo $row['hinh_anh'] ?>" alt="">
                 <div class="product-gallery-one-content-product-item-text">
                   <li>
                     <p class="title-item-index"><?php echo $row['ten_san_pham'] ?></p>
                     <div class="prices-index">
-                      <p class="price-index">Giá: <?php echo $row['don_gia'] ?> <sup>đ</sup></p>
+                      <p class="price-index">Giá: <?php echo  number_format($row['don_gia'], 0,'.','.'); ?> <sup>đ</sup></p>
                     </div>
                     <div class="information-container-index">
                       <p class="brand-item-index">Danh mục:<?php echo $row['ten_danh_muc'] ?></p>
@@ -107,12 +107,12 @@ $query_sp_noi_bat = mysqli_query($mysqli, $sql_sp_noi_bat);
           ?>
             <div class="product-gallery-one-content-product-item">
               <a href="index.php?quanly=chitiet&id=<?php echo $row['id_san_pham'] ?>">
-                <img src="admincp/modules/qlsanpham/uploads/<?php echo $row['hinh_anh'] ?>" alt="">
+                <img src="admin/images/<?php echo $row['hinh_anh'] ?>" alt="">
                 <div class="product-gallery-one-content-product-item-text">
                   <li>
                     <p class="title-item-index"><?php echo $row['ten_san_pham'] ?></p>
                     <div class="prices-index">
-                      <p class="price-index">Giá: <?php echo $row['don_gia'] ?> <sup>đ</sup></p>
+                      <p class="price-index">Giá: <?php echo number_format($row['don_gia'], 0,'.','.'); ?> <sup>đ</sup></p>
                     </div>
                     <div class="information-container-index">
                       <p class="brand-item-index">Danh mục:<?php echo $row['ten_danh_muc'] ?></p>

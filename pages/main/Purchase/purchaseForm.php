@@ -39,7 +39,7 @@ if (isset($_SESSION["login"]) && isset($_SESSION["userId"])) {
             <div class="product-cart">
                 <div class="product-image text-center">
                     <a href="" title="<?php echo $item["tensanpham"]; ?>">
-                        <img src="admincp/modules/qlsanpham/uploads/<?php echo $item["hinhanh"]; ?>" alt="hình ảnh sản phẩm" class="img-responsive">
+                        <img src="admin/images/<?php echo $item["hinhanh"]; ?>" alt="hình ảnh sản phẩm" class="img-responsive">
                     </a>
                 </div>
                 <div class="product-detail">

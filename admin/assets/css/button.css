@@ -1,0 +1,91 @@
+
+.detailButton {
+    background-color: #adadad; /* Màu nền */
+    color: white; /* Màu chữ */
+    border: none; /* Xóa border */
+    padding: 10px 20px; /* Đệm */
+    text-align: center; /* Căn giữa chữ */
+    text-decoration: none; /* Xóa gạch chân */
+    display: inline-block;
+    font-size: 16px; /* Kích thước chữ */
+    margin: 4px 2px;
+    transition-duration: 0.4s; /* Thời gian chuyển đổi */
+    cursor: pointer; /* Biến đổi con trỏ */
+    border-radius: 12px; /* Bo góc */
+    box-shadow: 0 6px #999; /* Tạo bóng */
+}
+
+.detailButton:hover {
+    background-color: #adadad; /* Màu nền khi hover */
+    color: white; /* Màu chữ khi hover */
+    box-shadow: 0 4px #666; /* Bóng khi hover */
+    transform: translateY(4px); /* Di chuyển nút xuống khi hover */
+}
+
+.editButton {
+    background-color: #0048b4; /* Màu nền */
+    color: white; /* Màu chữ */
+    border: none; /* Xóa border */
+    padding: 10px 20px; /* Đệm */
+    text-align: center; /* Căn giữa chữ */
+    text-decoration: none; /* Xóa gạch chân */
+    display: inline-block;
+    font-size: 16px; /* Kích thước chữ */
+    margin: 4px 2px;
+    transition-duration: 0.4s; /* Thời gian chuyển đổi */
+    cursor: pointer; /* Biến đổi con trỏ */
+    border-radius: 12px; /* Bo góc */
+    box-shadow: 0 6px #999; /* Tạo bóng */
+}
+
+.editButton:hover {
+    background-color: #0048b4; /* Màu nền khi hover */
+    color: white; /* Màu chữ khi hover */
+    box-shadow: 0 4px #666; /* Bóng khi hover */
+    transform: translateY(4px); /* Di chuyển nút xuống khi hover */
+}
+
+.delButton {
+    background-color: #c00404; /* Màu nền */
+    color: white; /* Màu chữ */
+    border: none; /* Xóa border */
+    padding: 10px 20px; /* Đệm */
+    text-align: center; /* Căn giữa chữ */
+    text-decoration: none; /* Xóa gạch chân */
+    display: inline-block;
+    font-size: 16px; /* Kích thước chữ */
+    margin: 4px 2px;
+    transition-duration: 0.4s; /* Thời gian chuyển đổi */
+    cursor: pointer; /* Biến đổi con trỏ */
+    border-radius: 12px; /* Bo góc */
+    box-shadow: 0 6px #999; /* Tạo bóng */
+}
+
+.delButton:hover {
+    background-color: #c00404; /* Màu nền khi hover */
+    color: white; /* Màu chữ khi hover */
+    box-shadow: 0 4px #666; /* Bóng khi hover */
+    transform: translateY(4px); /* Di chuyển nút xuống khi hover */
+}
+.manageButton {
+    background-color: #000000; /* Màu nền */
+    color: white; /* Màu chữ */
+    border: none; /* Xóa border */
+    padding: 10px 20px; /* Đệm */
+    text-align: center; /* Căn giữa chữ */
+    text-decoration: none; /* Xóa gạch chân */
+    display: inline-block;
+    font-size: 16px; /* Kích thước chữ */
+    margin: 4px 2px;
+    transition-duration: 0.4s; /* Thời gian chuyển đổi */
+    cursor: pointer; /* Biến đổi con trỏ */
+    border-radius: 12px; /* Bo góc */
+    box-shadow: 0 6px #999; /* Tạo bóng */
+}
+
+.manageButton:hover {
+    background-color: #000000; /* Màu nền khi hover */
+    color: white; /* Màu chữ khi hover */
+    box-shadow: 0 4px #666; /* Bóng khi hover */
+    transform: translateY(4px); /* Di chuyển nút xuống khi hover */
+}

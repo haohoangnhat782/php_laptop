@@ -23,12 +23,15 @@ if (isset($_SESSION["login"]) && isset($_SESSION["userId"])) {
     }
 }
 
+  
+   
+
 $query1 = "SELECT * FROM don_hang ORDER BY id_don_hang DESC LIMIT 1";
 $result = $mysqli->query($query1);
 $row = $result->fetch_assoc();
 $id_don_hang = $row["id_don_hang"] + 1;
 
-$query2 = "INSERT INTO don_hang (id_don_hang, dia_chi_nhan, ho_ten_nguoi_nhan, ngay_dat_hang, ngay_giao_hang, sdt_nhan_hang, trang_thai_don_hang, ma_nguoi_dat) VALUES ($id_don_hang, '$address', '$name', '$datePurchase', '$dateReceive', '$phoneNumber',1, '$userId')";
+$query2 = "INSERT INTO don_hang (id_don_hang, dia_chi_nhan, ho_ten_nguoi_nhan, ngay_dat_hang, ngay_giao_hang, sdt_nhan_hang, trang_thai_don_hang, ma_nguoi_dat) VALUES ($id_don_hang, '$address', '$name', '$datePurchase', '$dateReceive', '$phoneNumber',0, '$userId')";
 $order = $mysqli->query($query2);
 
 foreach ($shoppingCart as $item) {

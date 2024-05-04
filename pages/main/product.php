@@ -8,7 +8,7 @@
 <body>
 
     <?php
-    $sql_chitiet = "SELECT * FROM san_pham,danh_muc WHERE san_pham.ma_danh_muc=danh_muc.id_danh_muc and san_pham.id_san_pham ='$_GET[id]' LIMIT 1";
+    $sql_chitiet = "SELECT * FROM san_pham,danh_muc WHERE san_pham.ma_danh_muc=danh_muc.id_danh_muc and san_pham.trang_thai=1 and san_pham.id_san_pham ='$_GET[id]' LIMIT 1";
     $query_chitiet = mysqli_query($mysqli, $sql_chitiet);
     $query = "SELECT so_luong FROM san_pham WHERE id_san_pham = '$_GET[id]'";
     $result = mysqli_query($mysqli, $query);
@@ -24,13 +24,13 @@
                             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img src="admincp/modules/qlsanpham/uploads/<?php echo $row['hinh_anh'] ?>" class="d-block w-100" alt="Image 1">
+                                        <img src="admin/images/<?php echo $row['hinh_anh'] ?>" class="d-block w-100" alt="Image 1">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="admincp/modules/qlsanpham/uploads/<?php echo $row['hinh_anh'] ?>" class="d-block w-100" alt="Image 2">
+                                        <img src="admin/images/<?php echo $row['hinh_anh'] ?>" class="d-block w-100" alt="Image 2">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="admincp/modules/qlsanpham/uploads/<?php echo $row['hinh_anh'] ?>" class="d-block w-100" alt="Image 3">
+                                        <img src="admin/images/<?php echo $row['hinh_anh'] ?>" class="d-block w-100" alt="Image 3">
                                     </div>
                                 </div>
                                 <div class="carousel-control">

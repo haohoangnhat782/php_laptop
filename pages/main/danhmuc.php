@@ -28,7 +28,7 @@ $row_title=mysqli_fetch_array($query_dm);
               <div class="filter-product-content">
                 
                   <div class="filter-product-content-left">
-                        <?php include('pages/main/sidebar/sidebar.php') ?>
+                  <?php include('pages/main/sidebar/sidebar_timkiem.php') ?>
       
                   </div>
                   <div class="filter-product-content-right">

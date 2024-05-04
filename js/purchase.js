@@ -120,9 +120,7 @@ $(document).ready(function () {
 
             if (response === "Đặt hàng thành công") {
               window.location.href = "index.php";
-            } else if (response === "Vui lòng nhập đầy đủ thông tin") {
-              window.location.href = "index.php?quanly=purchase";
-            }
+            } 
           },
         });
       }

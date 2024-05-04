@@ -7,7 +7,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 1;
 $so_sp = 8;
 $offset = ($page -1) * $so_sp;
 
-$sql_pro = "SELECT * FROM san_pham,danh_muc where san_pham.ma_danh_muc=danh_muc.id_danh_muc order by san_pham.id_san_pham DESC LIMIT $offset, $so_sp";
+$sql_pro = "SELECT * FROM san_pham,danh_muc where san_pham.ma_danh_muc=danh_muc.id_danh_muc and san_pham.trang_thai=1 order by san_pham.id_san_pham DESC LIMIT $offset, $so_sp";
 $query_sp = mysqli_query($mysqli, $sql_pro);
 
 
@@ -19,7 +19,7 @@ $query_sp = mysqli_query($mysqli, $sql_pro);
                                 ?>
                                     <div class="product-filter-content-product-item">
                                         <a href="index.php?quanly=chitiet&id=<?php echo $row['id_san_pham']  ?>">
-                                            <img src="admincp/modules/qlsanpham/uploads/<?php echo $row['hinh_anh'] ?>" alt="">
+                                            <img src="admin/images/<?php echo $row['hinh_anh'] ?>" alt="">
                                             <div class="product-filter-content-product-item-text">
                                                 <li>
                                                 <p class="title-item"> <?php
@@ -32,7 +32,7 @@ $query_sp = mysqli_query($mysqli, $sql_pro);
 
                                                     <div class="prices">
 
-                                                        <p class="price">Giá: <?php echo $row['don_gia'] ?><sup>đ</sup></p>
+                                                        <p class="price">Giá: <?php echo number_format($row['don_gia'], 0,'.','.');  ?><sup>đ</sup></p>
                                                         <!-- <p class="discount-item"><a href="">21.490.000 <sup>đ</sup></a></p> -->
                                                     </div>
 

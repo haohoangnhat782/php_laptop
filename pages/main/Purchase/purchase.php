@@ -5,10 +5,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script defer src="https://kit.fontawesome.com/e634a8a20d.js" crossorigin="anonymous"></script>
-    <script defer src="js/purchase.js"></script>
+    <script defer src="js/purchase123456.js"></script>
 </head>
 
 <body>
+<?php if(isset($_SESSION["alert_message_cart"])){ ?>
+         alert("<?php echo $_SESSION["alert_message_cart"]; ?>");
+        <?php
+            unset($_SESSION["alert_message_cart"]);}
+        ?>
     <div class="body-container purchase-body-container">
         <div class="container">
             <div id="main-container" class="row">
@@ -32,7 +37,7 @@
                                     <?php include "pages/main/Purchase/purchaseForm.php"; ?>
                                 </div>
                                 <div class="payment">
-                                    <form method="post" class="formPayment" id="formPayment">
+                                    <form method="post" class="formPayment" id="formPayment" onsubmit="return validateForm()">
                                         <h3 class="h3_title">Thông tin mua hàng</h3>
                                         <div class="row">
                                             <div class="inputContainer">
@@ -47,9 +52,11 @@
                                         </div>
                                         <div class="total-price-products"></div>
                                         <div class="btn-area">
-                                            <button id="cod-btn btn" class="payment-btn" title="Đặt hàng" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                                Đặt hàng
-                                            </button>
+                                        <button id="cod-btn" class="payment-btn" title="Đặt hàng" type="button">
+    Đặt hàng
+</button>
+
+
                                         </div>
                                     </form>
                                 </div>
@@ -74,10 +81,40 @@
                     Bạn muốn đặt hàng chứ ?
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy Bỏ</button>
-                    <button type="button" class="btn btn-primary btn-modal-confirm">Đặt Hàng</button>
+                    <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Hủy Bỏ</button>
+                    <button type="submit" class="btn btn-primary btn-modal-confirm">Đặt Hàng</button>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+function isNumeric(str) {
+    return /^\d+$/.test(str);
+}
+
+
+function validateForm() {
+    var name = $('#name').val().trim();
+    var telephone = $('#telephone').val().trim();
+    var address = $('#address').val().trim();
+    if (name === '' || telephone === '' || address === '') {
+        alert('Vui lòng nhập đầy đủ thông tin.');
+        return false;
+    }
+
+    if (telephone.length !== 10 || !isNumeric(telephone)) {
+        alert('Số điện thoại không hợp lệ. Vui lòng nhập số điện thoại có 10 chữ số.');
+        return false;
+    }
+
+    return true;
+}
+$('#cod-btn').click(function() {
+
+    if (validateForm()) {
+        $('#exampleModal').modal('show');
+    }
+});
+
+    </script>
 </body>

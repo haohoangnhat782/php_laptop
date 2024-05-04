@@ -14,7 +14,7 @@
 
   ?>
   <section class="menu-bar">
-    <div class="container-product">
+    <!-- <div class="container-product">
       <div class="menu-bar-content">
         <ul>
           <li><a href="index.php?quanly=trangchu">Trang Chủ</a></li>
@@ -67,7 +67,7 @@
           </li>
         </ul>
       </div>
-    </div>
+    </div> -->
     <div class="clear"></div>
   </section>
 </body>

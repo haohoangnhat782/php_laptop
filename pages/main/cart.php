@@ -57,7 +57,7 @@ if (isset($_SESSION['insufficient_stock']) && $_SESSION['insufficient_stock'] ==
 							<tr>
 								<td><?php echo $stt += 1 ?></td>
 								<td><?php echo $item["masp"]; ?></td>
-								<td><img src="admincp/modules/qlsanpham/uploads/<?php echo $item["hinhanh"]; ?>" class="cart-item-image" /><?php echo $item["tensanpham"]; ?></td>
+								<td><img src="admin/images/<?php echo $item["hinhanh"]; ?>" class="cart-item-image" /><?php echo $item["tensanpham"]; ?></td>
 
 								<td style="text-align:right;"> 
 								<a style="text-decoration: none;" href="pages/main/themgiohang.php?cong=<?php echo $item['id']?>">+</a>

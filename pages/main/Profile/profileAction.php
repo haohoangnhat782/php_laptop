@@ -33,7 +33,7 @@ function handleSubmitUpdatePassword($mysqli)
 {
     $newPassword = $_POST['secondInputValue'];
 
-    $query = "UPDATE nguoi_dung SET password = '$newPassword' WHERE id_nguoi_dung = '{$_SESSION['userId']}'";
+    $query = "UPDATE tbl_taikhoan SET Mat_khau = '$newPassword' WHERE MaTK = '{$_SESSION['userId']}'";
     $user = $mysqli->query($query);
 
     if ($user) {

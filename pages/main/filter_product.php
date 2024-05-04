@@ -24,7 +24,7 @@ $total_pages = ceil($total_products / $so_sp);
               <div class="filter-product-content">
                 
                   <div class="filter-product-content-left">
-                        <?php include('pages/main/sidebar/sidebar.php') ?>
+                  <?php include('pages/main/sidebar/sidebar_timkiem.php') ?>
       
                   </div>
                   <div class="filter-product-content-right">

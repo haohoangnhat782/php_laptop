@@ -48,9 +48,10 @@ $query_dm = mysqli_query($mysqli, $sql_dm);
                             </ul>
                         </div>
                         <div class="search-container">
-                            <form action="index.php?quanly=timkiem" method="POST">
+                            <form action="index.php?quanly=timkiem" method="GET">
+                                <input type="hidden" name="quanly" value="timkiem">
                                 <input type="text" placeholder="Tìm kiếm sản phẩm" name="tukhoa" class="search-input">
-                                <button type="submit" class="search-btn" name="timkiem"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                <button type="submit" class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
                             </form>
                         </div>
                     </div>
